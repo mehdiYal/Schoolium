@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Profile De {{parent.nom}} {{parent.prenom}}</h1>
+	<ul>
+		<li><b>nom :</b>{{parent.nom}}</li>
+		<li><b>prenom :</b>{{parent.prenomMere}}</li>
+		<li><b>nom mere :</b>{{parent.nomMere}}</li>
+		<li><b>prenom mere :</b>{{parent.prenom}}</li>
+		<li><b>adresse :</b>{{parent.adresse}}</li>
+		<li><b>code postal :</b>{{parent.codePostal}}</li>
+		<li><b>telephone :</b>{{parent.telephone}}</li>
+		<li><b>username :</b>{{parent.username}}</li>
+		<li><b>email :</b>{{parent.email}}</li>
+		<li><b>type :</b>{{parent.typeUser|upper}}</li>
+		<li><b>derniere connexion :</b>{{parent.lastLogin|date('Y-m-d')}}</li>
+		<li><b>Ecole :</b>{{parent.ecole.nom|upper}} {{parent.ecole.ville|upper}}</li>
+		<li>
+			<b>Liste des enfants dans l'ecole</b>
+			<ul>
+				{% for eleve in parent.eleves %}
+					<li>{{eleve.nom}} {{eleve.prenom}}</li>
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
+	
+
+	
+{% endblock %}

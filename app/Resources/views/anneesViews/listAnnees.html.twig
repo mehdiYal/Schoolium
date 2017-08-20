@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{'list'|trans}} {{'annee'|trans}}</h1>
+	<ol>
+		{% for annee in annees %}
+			<li>{{ annee.nom}} {{ annee.niveau}} {{ annee.specialite}} <a href="{{ path('editAnnee',{'id':annee.id})}}">Modifier</a> <a href="{{ path('removeAnnee',{'id':annee.id})}}">Supprimer</a>
+		{% endfor %}
+	</ol>
+	
+{% endblock %}

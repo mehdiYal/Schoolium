@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Profile De {{eleve.nom}} {{eleve.prenom}}</h1>
+	<ul>
+		<li><b>photo :</b><img src="{% if eleve.photo %}{{ asset('uploads/photos/' ~ eleve.photo) }}{% else %}{{ asset('uploads/photos/avatar.png') }}{% endif %}" alt=""></li>
+		<li><b>nom :</b>{{eleve.nom}}</li>
+		<li><b>prenom :</b>{{eleve.prenom}}</li>
+		<li><b>genre :</b>{{eleve.genre}}</li>
+		<li><b>date et lieu de naissance :</b>{{eleve.dateDeNaissance|date('Y-m-d')}} à {{eleve.lieuDeNaissance}}</li>
+		<li><b>adresse :</b>{{eleve.adresse}}</li>
+		<li><b>code postal :</b>{{eleve.codePostal}}</li>
+		<li><b>telephone :</b>{{eleve.telephone}}</li>
+		<li><b>username :</b>{{eleve.username}}</li>
+		<li><b>email :</b>{{eleve.email}}</li>
+		<li><b>type :</b>{{eleve.typeUser|upper}}</li>
+		<li><b>derniere connexion :</b>{{eleve.lastLogin|date('Y-m-d')}}</li>
+		<li><b>parent :</b>{% if eleve.parent != null %}{{eleve.parent.nom}} {{eleve.parent.prenom}}{%endif%}</li>
+		<li><b>ecole :</b>{% if eleve.ecole != null %}{{eleve.ecole.nom}} {{eleve.ecole.ville}}{%endif%}</li>
+	</ul>
+	
+
+	
+{% endblock %}

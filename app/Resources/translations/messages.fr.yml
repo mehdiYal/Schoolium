@@ -1,0 +1,72 @@
+navbar:
+  link:
+    link1: ajouter admin
+    link2: list des admins
+    link3: ajouter enseignant
+    link4: list des enseignants
+    link5: ajouter eleve
+    link6: list des eleves
+    link7: ajouter parent
+    link8: list des parents
+    link9: ajouter ecole
+    link10: list des ecoles
+    link11: Mon profile
+    link12: Deconnexion
+    link13: Connexion
+    link14: ajouter matiere
+    link15: list des matieres
+    link16: Mon ecole
+    link17: ajouter année
+    link18: list des années
+  dropdown:
+    dropdown1: Admins
+    dropdown2: Enseignants
+    dropdown3: Eleves
+    dropdown4: Parents
+    dropdown5: Ecoles
+    dropdown6: Matieres
+    dropdown7: Années
+
+form:
+    name: Nom
+    lastName: Prénom
+    nameM: Nom de la mere
+    lastNameM: Prenom de la mere
+    cin: CIN
+    jobP: Profession du père
+    jobM: Profession du mère
+    adresse: Adresse
+    codePostal: Code postal
+    tel: Telephone
+    mobile: Mobile
+    genre: Genre
+    dateN: Date de naissance
+    lieuN: Lieu de naissance
+    dateE: Date d'entrée
+    typeC: Type du contrat
+    comment: Commentaire
+    nationalite: Nationalité
+    ecoleID: ID de l'école
+    groupeSanguin: Groupe Sanguin
+    photo: photo
+
+edit: Modifier
+add: Ajouter
+admin: Administrateur
+student: Elève
+teacher: Enseignant
+parent: Parent
+school: Ecole
+admins: Administrateurs
+students: Elèves
+teachers: Enseignants
+parents: Parents
+schools: Ecoles
+list: List des
+delete: supprimer
+profile: Profile
+matiere: Matiere
+annee: Année
+
+
+ 

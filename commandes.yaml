@@ -1,0 +1,81 @@
+#run symfony
+php bin/console server:run
+
+php bin/console doctrine:schema:update --dump-sql
+
+
+php bin/console doctrine:schema:update --force
+
+
+php bin/console cache:clear
+php bin/console cache:warmup
+
+php bin/console generate:doctrine:entity
+
+
+#Mettre à jour une entity
+php bin/console doctrine:generate:entities AUUserBundle:User AUGeneralBundle:Contact  AUFaqBundle:Faq 
+
+#Créer une entity à partir de la bdd
+php bin/console doctrine:mapping:convert metadata_format  ./src/AU/FaqBundle/Resources/config/doctrine --from-database --filter="faqCategory"
+
+#Pour installer les assets (js et css)
+php bin/console assets:install web --symlink
+
+
+#Supprimer un bundle
+Supprimer la racine + config.yml (ligne) + routing.yml
+
+#Creation d'un bundle
+php bin/console generate:bundle
+MAJ composer.js section autoload & composer dump-autoload
+
+yes
+namespace: CO\HomeBundle AUFaqBundle:Faq
+name:HomeBundle
+yml
+
+#Installer composer (enlever #)
+
+#php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+#php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+#php composer-setup.php
+#php -r "unlink('composer-setup.php');"
+
+#Installer un projet grace à composer
+
+composer create-project symfony/framework-standard-edition boule 2.8  -vvv
+
+php bin/console doctrine:generate:entities BOPrismPollBundle
+
+php bin/console doctrine:generate:entities ApplicationPrismPollBundle
+
+#Installer les assets
+
+php bin/console assets:install web --symlink
+
+#update
+
+php composer.phar update
+
+#generate entity
+
+php bin/console generate:doctrine:entity --entity=AppBundle:About
+php bin/console generate:doctrine:entity --entity=LectureBundle:Vote
+
+
+
+#create users
+php bin/console fos:user:create user1 gfdf@gmail.com 123
+
+#attribute role to user
+php bin/console fos:user:promote user1 ROLE_ADMIN
+
+#remov role to user
+php bin/console fos:user:demote user1 ROLE_ADMIN
+
+#show router
+php bin/console debug:router
+
+#generate form
+php bin/console doctrine:generate:form SchoolBundle:Ecole

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{'list'|trans}} {{'matiere'|trans}}</h1>
+	<ol>
+		{% for matiere in matieres %}
+			<li>{{ matiere.nom}} {{ matiere.description}} <a href="{{ path('editMatiere',{'id':matiere.id})}}">Modifier</a> <a href="{{ path('removeMatiere',{'id':matiere.id})}}">Supprimer</a>
+		{% endfor %}
+	</ol>
+	
+{% endblock %}

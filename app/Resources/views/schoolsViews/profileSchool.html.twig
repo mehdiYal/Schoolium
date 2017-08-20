@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Profile De {{ecole.nom}} à {{ecole.ville}}</h1>
+	<ul>
+		<li><b>logo :</b><img src="{% if ecole.logo %}{{ asset('uploads/logos/' ~ ecole.logo) }}{% else %}{{ asset('uploads/logos/logo.jpg') }}{% endif %}" alt=""></li>
+		<li><b>nom :</b>{{ecole.nom}}</li>
+		<li><b>code :</b>{{ecole.code}}</li>
+		<li><b>adresse :</b>{{ecole.adresse}}</li>
+		<li><b>ville :</b>{{ecole.ville}}</li>
+		<li><b>pays :</b>{{ecole.pays}}</li>
+		<li><b>telephone :</b>{{ecole.telephone}}</li>
+		<li><b>email :</b>{{ecole.email}}</li>
+		<li><b>date De Creation :</b>{{ecole.dateCreation|date('Y-m-d')}}</li>
+		<li><b>informations :</b>{{ecole.informations}}</li>
+		<li><b>admin :</b>{{ecole.admin.nom}} {{ecole.admin.prenom}}</li>
+		<li>
+			<b>Liste des parents dans l'ecole</b>
+			<ul>
+				{% for parent in ecole.parents %}
+					<li>{{parent.nom}} {{parent.prenom}}</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li>
+			<b>Liste des enseignants dans l'ecole</b>
+			<ul>
+				{% for ens in ecole.enseignants %}
+					<li>{{ens.nom}} {{ens.prenom}}</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li>
+			<b>Liste des eleves dans l'ecole</b>
+			<ul>
+				{% for eleve in ecole.eleves %}
+					<li>{{eleve.nom}} {{eleve.prenom}}</li>
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
+
+	
+{% endblock %}

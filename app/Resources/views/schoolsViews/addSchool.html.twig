@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<h1>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} {{'school'|trans}}</h1>
+<div class="container">
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.logo) }}
+		    {{ form_widget(form.logo ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.logo) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.nom) }}
+		    {{ form_widget(form.nom ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.nom) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.code) }}
+		    {{ form_widget(form.code ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.code) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.adresse) }}
+		    {{ form_widget(form.adresse ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.adresse) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.ville) }}
+		    {{ form_widget(form.ville ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.ville) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.pays) }}
+		    {{ form_widget(form.pays ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.pays) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.telephone) }}
+		    {{ form_widget(form.telephone ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.telephone) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.email) }}
+		    {{ form_widget(form.email ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.email) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.dateCreation) }}
+		    {{ form_widget(form.dateCreation ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.dateCreation) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.informations) }}
+		    {{ form_widget(form.informations ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.informations) }}
+		</div>
+		<button type="submit">Valider</button>
+	{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

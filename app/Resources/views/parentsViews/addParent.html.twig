@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<h1>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} {{'parent'|trans}}</h1>
+<div class="container">
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.nom) }}
+		    {{ form_widget(form.nom ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.nom) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.prenom) }}
+		    {{ form_widget(form.prenom ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.prenom) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.nomMere) }}
+		    {{ form_widget(form.nomMere ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.nomMere) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.prenomMere) }}
+		    {{ form_widget(form.prenomMere ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.prenomMere) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.cIN) }}
+		    {{ form_widget(form.cIN ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.cIN) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.professionPere) }}
+		    {{ form_widget(form.professionPere ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.professionPere) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.professionMere) }}
+		    {{ form_widget(form.professionMere ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.professionMere) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.adresse) }}
+		    {{ form_widget(form.adresse ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.adresse) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.codePostal) }}
+		    {{ form_widget(form.codePostal ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.codePostal) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.telephone) }}
+		    {{ form_widget(form.telephone ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.telephone) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.mobil) }}
+		    {{ form_widget(form.mobil ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.mobil) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.email) }}
+		    {{ form_widget(form.email ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.email) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.username) }}
+		    {{ form_widget(form.username ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.username) }}
+		</div>
+	{% if edit==false %}
+		<div class="form-group">
+			{{ form_label(form.plainPassword.first) }}
+		    {{ form_widget(form.plainPassword.first ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.plainPassword.first) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.plainPassword.second) }}
+		    {{ form_widget(form.plainPassword.second ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.plainPassword.second) }}
+		</div>
+	{% else %}
+	{% do form.plainPassword.setRendered %}
+	{% endif %}	
+		<button type="submit">Valider</button>
+	{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+navbar:
+  link:
+    link1: اضافة مدير
+    link2: قائمة المدراء
+    link3: اضافة استاذ
+    link4: قائمة الاساتذة
+    link5: اضافة تلميذ
+    link6: قائمة التلاميذ
+    link7: اضافن ولي
+    link8: قائمة الاولياء
+    link9: اضافة مدرسة
+    link10: قائمة المدارس
+    link11: حسابي
+    link12: خروج
+    link13: دخول
+    link14: اضافة مادة
+    link15: قائمة المواد
+    link16: مدرستي
+    link17: اضافة سنة
+    link18: قائمة السنوات
+  dropdown:
+    dropdown1: المدراء
+    dropdown2: الاساتذة
+    dropdown3: التلاميذ
+    dropdown4: الاولياء
+    dropdown5: المدارس
+    dropdown6: المواد
+    dropdown7: السنوات
+
+form:
+    name: اللقب
+    lastName: الاسم
+    nameM: لقب الام
+    lastNameM: اسم الام
+    cin: CIN
+    jobP: مهنة الاب
+    jobM: مهنة الام
+    adresse: العنوان
+    codePostal: Code postal
+    tel: رقم الهاتف
+    mobile: رقم النقال
+    genre: الجنس
+    dateN: تاريخ الميلاد
+    lieuN: مكهن الميلاد
+    dateE: تاريخ الدخول
+    typeC: نوع العقد
+    comment: التعليق
+    nationalite: الجنسية
+    ecoleID: رمز المدرسة
+    groupeSanguin: زمرة الدم
+    photo: الصورة
+
+edit: تعديل
+add: اضافة
+admin: مدير
+student: تلميذ
+teacher: استاذ
+parent: ولي
+school: مدرسة
+admins: المدراء
+students: التلاميذ
+teachers: الاساتذة
+parents: الاولياء
+schools: المدارس
+list: قائمة
+delete: حذف
+profile: الحساب
+matiere: مادة
+annee: سنة 

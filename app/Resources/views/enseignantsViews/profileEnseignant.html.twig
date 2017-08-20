@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Profile De {{enseignant.nom}} {{enseignant.prenom}}</h1>
+	<ul>
+		<li><b>photo :</b><img src="{% if enseignant.photo %}{{ asset('uploads/photos/' ~ enseignant.photo) }}{% else %}{{ asset('uploads/photos/avatar.png') }}{% endif %}" alt=""></li>
+		<li><b>nom :</b>{{enseignant.nom}}</li>
+		<li><b>prenom :</b>{{enseignant.prenom}}</li>
+		<li><b>genre :</b>{{enseignant.genre}}</li>
+		<li><b>date et lieu de naissance :</b>{{enseignant.dateDeNaissance|date('Y-m-d')}} à {{enseignant.lieuDeNaissance}}</li>
+		<li><b>adresse :</b>{{enseignant.adresse}}</li>
+		<li><b>code postal :</b>{{enseignant.codePostal}}</li>
+		<li><b>telephone :</b>{{enseignant.telephone}}</li>
+		<li><b>username :</b>{{enseignant.username}}</li>
+		<li><b>email :</b>{{enseignant.email}}</li>
+		<li><b>type :</b>{{enseignant.typeUser|upper}}</li>
+		<li><b>derniere connexion :</b>{{enseignant.lastLogin|date('Y-m-d')}}</li>
+		<li><b>Ecole :</b>{{enseignant.ecole.nom|upper}} {{enseignant.ecole.ville|upper}}</li>
+	</ul>
+
+	
+{% endblock %}

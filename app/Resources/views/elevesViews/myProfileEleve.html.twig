@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Mon Profile {{app.user.nom}} {{app.user.prenom}}</h1>
+	<ul>
+		<li><b>photo :</b><img src="{% if app.user.photo %}{{ asset('uploads/photos/' ~ app.user.photo) }}{% else %}{{ asset('uploads/photos/avatar.png') }}{% endif %}" alt=""></li>
+		<li><b>nom :</b>{{app.user.nom}}</li>
+		<li><b>prenom :</b>{{app.user.prenom}}</li>
+		<li><b>genre :</b>{{app.user.genre}}</li>
+		<li><b>date et lieu de naissance :</b>{{app.user.dateDeNaissance|date('Y-m-d')}} à {{app.user.lieuDeNaissance}}</li>
+		<li><b>adresse :</b>{{app.user.adresse}}</li>
+		<li><b>code postal :</b>{{app.user.codePostal}}</li>
+		<li><b>telephone :</b>{{app.user.telephone}}</li>
+		<li><b>username :</b>{{app.user.username}}</li>
+		<li><b>email :</b>{{app.user.email}}</li>
+		<li><b>type :</b>{{app.user.typeUser|upper}}</li>
+		<li><b>derniere connexion :</b>{{app.user.lastLogin|date('Y-m-d')}}</li>
+		<li><b>parent :</b>{{app.user.parent.nom}} {{app.user.parent.nom}}</li>
+	</ul>
+	
+	
+{% endblock %}

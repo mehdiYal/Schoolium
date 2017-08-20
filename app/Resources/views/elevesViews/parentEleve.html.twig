@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Pas de parent associé à {{eleve.nom}} {{eleve.prenom}} </h1>
+<h2>Selectioner un parent</h2>	
+	<ol>
+		{% for parant in parents %}
+			<li>
+				{{ parant.nom}} {{ parant.prenom}} <a href="{{ path('assoParent',{'id':eleve.id,'idp':parant.id})}}">Associer</a>
+			</li>
+		{% endfor %}
+	</ol>
+{% endblock %}

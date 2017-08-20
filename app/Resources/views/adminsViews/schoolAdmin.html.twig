@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Pas d'ecole associé à {{admin.nom}} {{admin.prenom}} </h1>
+<h2>Selectioner une Ecole</h2>	
+	<ol>
+		{% for ecole in ecoles %}
+			{% if ecole.admin ==null %}
+			<li>
+				{{ ecole.nom}} {{ ecole.ville}} <a href="{{ path('assoSchool',{'id':admin.id,'idp':ecole.id})}}">Associer</a>
+			</li>
+			{% endif %}
+		{% endfor %}
+	</ol>
+{% endblock %}

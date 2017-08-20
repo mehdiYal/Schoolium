@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{'list'|trans}} {{'parents'|trans}}</h1>
+	<ol>
+		{% for parant in parentals %}
+			<li>{{ parant.nom}} {{ parant.prenom}} <a href="{{ path('editParental',{'id':parant.id})}}">{{'edit'|trans}}</a> <a href="{{ path('removeParental',{'id':parant.id})}}">{{'delete'|trans}}</a> <a href="{{ path('profileParental',{'id':parant.id})}}">{{'profile'|trans}}</a></li>
+		{% endfor %}
+	</ol>
+	
+{% endblock %}

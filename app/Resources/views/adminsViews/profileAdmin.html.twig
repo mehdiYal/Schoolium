@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Profile De {{admin.nom}} {{admin.prenom}}</h1>
+	<ul>
+		<li><b>photo :</b><img src="{% if admin.photo %}{{ asset('uploads/photos/' ~ admin.photo) }}{% else %}{{ asset('uploads/photos/avatar.png') }}{% endif %}" alt=""></li>
+		<li><b>nom :</b>{{admin.nom}}</li>
+		<li><b>prenom :</b>{{admin.prenom}}</li>
+		<li><b>genre :</b>{{admin.genre}}</li>
+		<li><b>date et lieu de naissance :</b>{{admin.dateDeNaissance|date('Y-m-d')}} à {{admin.lieuDeNaissance}}</li>
+		<li><b>adresse :</b>{{admin.adresse}}</li>
+		<li><b>code postal :</b>{{admin.codePostal}}</li>
+		<li><b>telephone :</b>{{admin.telephone}}</li>
+		<li><b>username :</b>{{admin.username}}</li>
+		<li><b>email :</b>{{admin.email}}</li>
+		<li><b>type :</b>{{admin.typeUser|upper}}</li>
+		<li><b>derniere connexion :</b>{{admin.lastLogin|date('Y-m-d')}}</li>
+	</ul>
+
+	
+{% endblock %}
