@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<h1>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} {{'Menu'|trans}}</h1>
+<div class="container">
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.jour) }}
+		    {{ form_widget(form.jour ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.jour) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.menu) }}
+		    {{ form_widget(form.menu ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.menu) }}
+		</div>
+		<button type="submit">Valider</button>
+	{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

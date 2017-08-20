@@ -14,6 +14,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Ecole
 {
     /**
+     * @var Menu
+     *
+     * @ORM\OneToMany(targetEntity="Menu",mappedBy="ecole")
+     */
+    private $menus;
+
+    /**
      * @var Classe
      *
      * @ORM\OneToMany(targetEntity="Classe",mappedBy="ecole")
@@ -678,5 +685,39 @@ class Ecole
     public function getTransports()
     {
         return $this->transports;
+    }
+
+    /**
+     * Add menu
+     *
+     * @param \SchoolBundle\Entity\Menu $menu
+     *
+     * @return Ecole
+     */
+    public function addMenu(\SchoolBundle\Entity\Menu $menu)
+    {
+        $this->menus[] = $menu;
+
+        return $this;
+    }
+
+    /**
+     * Remove menu
+     *
+     * @param \SchoolBundle\Entity\Menu $menu
+     */
+    public function removeMenu(\SchoolBundle\Entity\Menu $menu)
+    {
+        $this->menus->removeElement($menu);
+    }
+
+    /**
+     * Get menus
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMenus()
+    {
+        return $this->menus;
     }
 }
