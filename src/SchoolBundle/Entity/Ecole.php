@@ -21,6 +21,13 @@ class Ecole
     private $classes;
 
     /**
+     * @var Salle
+     *
+     * @ORM\OneToMany(targetEntity="Salle",mappedBy="ecole")
+     */
+    private $salles;
+
+    /**
      * @var Enseignant
      *
      * @Assert\Type(type="AppBundle\Entity\Enseignant")
@@ -582,5 +589,39 @@ class Ecole
         $this->eleves[] = $elefe;
 
         return $this;
+    }
+
+    /**
+     * Add salle
+     *
+     * @param \SchoolBundle\Entity\Salle $salle
+     *
+     * @return Ecole
+     */
+    public function addSalle(\SchoolBundle\Entity\Salle $salle)
+    {
+        $this->salles[] = $salle;
+
+        return $this;
+    }
+
+    /**
+     * Remove salle
+     *
+     * @param \SchoolBundle\Entity\Salle $salle
+     */
+    public function removeSalle(\SchoolBundle\Entity\Salle $salle)
+    {
+        $this->salles->removeElement($salle);
+    }
+
+    /**
+     * Get salles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSalles()
+    {
+        return $this->salles;
     }
 }

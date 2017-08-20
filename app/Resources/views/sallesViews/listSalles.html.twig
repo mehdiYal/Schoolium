@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{'list'|trans}} {{'salles'|trans}}</h1>
+	<ol>
+		{% for salle in salles %}
+			<li>{{ salle.nom}} {{ salle.capacite}} {{ salle.equipement}} <a href="{{ path('editSalle',{'id':salle.id})}}">Modifier</a> <a href="{{ path('removeSalle',{'id':salle.id})}}">Supprimer</a>
+		{% endfor %}
+	</ol>
+	
+{% endblock %}

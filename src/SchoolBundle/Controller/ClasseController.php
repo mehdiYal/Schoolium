@@ -50,13 +50,12 @@ class ClasseController extends Controller
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $classe->setEcole($this->getUser()->getEcole());
             $em=$this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('listClasses');
         }
 
-        return $this->render('classesViews/addClasse.html.twig',array("edit"=>false,"form"=>$form->createView()));
+        return $this->render('classesViews/addClasse.html.twig',array("edit"=>true,"form"=>$form->createView()));
     }
 
 

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<h1>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} {{'salle'|trans}}</h1>
+<div class="container">
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.nom) }}
+		    {{ form_widget(form.nom ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.nom) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.capacite) }}
+		    {{ form_widget(form.capacite ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.capacite) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.equipement) }}
+		    {{ form_widget(form.equipement ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.equipement) }}
+		</div>
+		<button type="submit">Valider</button>
+	{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}
