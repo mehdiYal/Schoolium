@@ -17,8 +17,24 @@
 		<li><b>derniere connexion :</b>{{eleve.lastLogin|date('Y-m-d')}}</li>
 		<li><b>parent :</b>{% if eleve.parent != null %}{{eleve.parent.nom}} {{eleve.parent.prenom}}{%endif%}</li>
 		<li><b>ecole :</b>{% if eleve.ecole != null %}{{eleve.ecole.nom}} {{eleve.ecole.ville}}{%endif%}</li>
+		<li>
+			<b>Liste des Absences</b>
+			<ul>
+				{% for abs in eleve.absences %}
+					<li>{{abs.date|date('Y-m-d H:i:s')}} {{abs.commentaire}}</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li>
+			<b>Liste des retard</b>
+			<ul>
+				{% for ret in eleve.retards %}
+					<li>{{ret.date|date('Y-m-d H:i:s')}} {{ret.commentaire}}</li>
+				{% endfor %}
+			</ul>
+		</li>
 	</ul>
 	
-
+	{{dump(eleve)}}
 	
 {% endblock %}

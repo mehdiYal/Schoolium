@@ -6,6 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Eleve;
+use AppBundle\Entity\Retard;
+use AppBundle\Entity\Absence;
 use AppBundle\Entity\Parental;
 use AppBundle\Form\EleveType;
 use Symfony\Component\HttpFoundation\Response;
@@ -78,6 +80,37 @@ class EleveController extends Controller
         }
 
         return $this->render('elevesViews/addEleve.html.twig',array("edit"=>true,"form"=>$form->createView()));
+    }
+
+
+     /**
+     * @Route("/retardEleve/{id}", name="retardEleve")
+     */
+    public function retardAction(Eleve $eleve)
+    {
+        $retard = new Retard();
+        $retard->setEleve($eleve);
+        $retard->setDate(date_create(date('Y-m-d H:i:s')));
+        $retard->setCommentaire("Retard");
+        $em=$this->getDoctrine()->getManager();
+        $em->persist($retard);
+        $em->flush();
+        return $this->redirectToRoute('listEleves');
+    }
+
+    /**
+     * @Route("/absenceEleve/{id}", name="absenceEleve")
+     */
+    public function absenceAction(Eleve $eleve)
+    {
+        $absence = new Absence();
+        $absence->setEleve($eleve);
+        $absence->setDate(date_create(date('Y-m-d H:i:s')));
+        $absence->setCommentaire("Absence");
+        $em=$this->getDoctrine()->getManager();
+        $em->persist($absence);
+        $em->flush();
+        return $this->redirectToRoute('listEleves');
     }
 
 

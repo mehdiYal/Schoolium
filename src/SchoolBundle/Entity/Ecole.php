@@ -50,6 +50,17 @@ class Ecole
     private $eleves;
 
     /**
+     * @var Transport
+     *
+     * @Assert\Type(type="SchoolBundle\Entity\Transport")
+     *
+     * @Assert\Valid()
+     *
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\Transport",mappedBy="ecole")
+     */
+    private $transports;
+
+    /**
      * @var Parental
      *
      * @Assert\Type(type="AppBundle\Entity\Parental")
@@ -528,7 +539,7 @@ class Ecole
      *
      * @param \AppBundle\Entity\Eleve $eleve
      */
-    public function removeElefe(\AppBundle\Entity\Eleve $eleve)
+    public function removeEleve(\AppBundle\Entity\Eleve $eleve)
     {
         $this->eleves->removeElement($eleve);
     }
@@ -623,5 +634,49 @@ class Ecole
     public function getSalles()
     {
         return $this->salles;
+    }
+
+    /**
+     * Remove elefe
+     *
+     * @param \AppBundle\Entity\Eleve $elefe
+     */
+    public function removeElefe(\AppBundle\Entity\Eleve $elefe)
+    {
+        $this->eleves->removeElement($elefe);
+    }
+
+    /**
+     * Add transport
+     *
+     * @param \SchoolBundle\Entity\Transport $transport
+     *
+     * @return Ecole
+     */
+    public function addTransport(\SchoolBundle\Entity\Transport $transport)
+    {
+        $this->transports[] = $transport;
+
+        return $this;
+    }
+
+    /**
+     * Remove transport
+     *
+     * @param \SchoolBundle\Entity\Transport $transport
+     */
+    public function removeTransport(\SchoolBundle\Entity\Transport $transport)
+    {
+        $this->transports->removeElement($transport);
+    }
+
+    /**
+     * Get transports
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTransports()
+    {
+        return $this->transports;
     }
 }

@@ -15,9 +15,19 @@ class Eleve extends User
     /**
      * @var Classe
      *
-     * @Assert\Type(type="SchoolBundle\Entity\Classe")
+     * @ORM\OneToMany(targetEntity="Retard",mappedBy="eleve")
+     */
+    private $retards;
+
+    /**
+     * @var Classe
      *
-     * @Assert\Valid()
+     * @ORM\OneToMany(targetEntity="Absence",mappedBy="eleve")
+     */
+    private $absences;
+
+    /**
+     * @var Classe
      *
      * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Classe", inversedBy="eleves")
      *
@@ -28,15 +38,20 @@ class Eleve extends User
     /**
      * @var Ecole
      *
-     * @Assert\Type(type="SchoolBundle\Entity\Ecole")
-     *
-     * @Assert\Valid()
-     *
      * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Ecole", inversedBy="eleves")
      *
      * @ORM\JoinColumn(nullable=true)
      */
     private $ecole;
+
+    /**
+     * @var Transport
+     *
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Transport", inversedBy="eleves")
+     *
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $transport;
 
      /**
      * @var Parental
@@ -586,5 +601,97 @@ class Eleve extends User
     public function getClasse()
     {
         return $this->classe;
+    }
+
+    /**
+     * Set transport
+     *
+     * @param \SchoolBundle\Entity\Transport $transport
+     *
+     * @return eleve
+     */
+    public function setTransport(\SchoolBundle\Entity\Transport $transport = null)
+    {
+        $this->transport = $transport;
+
+        return $this;
+    }
+
+    /**
+     * Get transport
+     *
+     * @return \SchoolBundle\Entity\Transport
+     */
+    public function getTransport()
+    {
+        return $this->transport;
+    }
+
+    /**
+     * Add retard
+     *
+     * @param \AppBundle\Entity\Retard $retard
+     *
+     * @return Eleve
+     */
+    public function addRetard(\AppBundle\Entity\Retard $retard)
+    {
+        $this->retards[] = $retard;
+
+        return $this;
+    }
+
+    /**
+     * Remove retard
+     *
+     * @param \AppBundle\Entity\Retard $retard
+     */
+    public function removeRetard(\AppBundle\Entity\Retard $retard)
+    {
+        $this->retards->removeElement($retard);
+    }
+
+    /**
+     * Get retards
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRetards()
+    {
+        return $this->retards;
+    }
+
+    /**
+     * Add absence
+     *
+     * @param \AppBundle\Entity\Absence $absence
+     *
+     * @return Eleve
+     */
+    public function addAbsence(\AppBundle\Entity\Absence $absence)
+    {
+        $this->absences[] = $absence;
+
+        return $this;
+    }
+
+    /**
+     * Remove absence
+     *
+     * @param \AppBundle\Entity\Absence $absence
+     */
+    public function removeAbsence(\AppBundle\Entity\Absence $absence)
+    {
+        $this->absences->removeElement($absence);
+    }
+
+    /**
+     * Get absences
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAbsences()
+    {
+        return $this->absences;
     }
 }

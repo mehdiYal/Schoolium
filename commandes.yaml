@@ -1,3 +1,5 @@
+****************************************SymfonyCommandes*****************************************************
+
 #run symfony
 php bin/console server:run
 
@@ -79,3 +81,25 @@ php bin/console debug:router
 
 #generate form
 php bin/console doctrine:generate:form SchoolBundle:Ecole
+
+
+****************************************GitCommandes*****************************************************
+git push origin master
+
+git commit -m "gestion des salles"
+
+git add --all
+
+git status
+
+git init
+
+git config --globale user.name "nom"
+
+git config --globale user.email "email@email.com"
+
+git remote add [<options>] <name> <url> 
+
+$ git remote -v
+
+git remote add origin  https://github.com/mehdiYal/Schoolium.git
