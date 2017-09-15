@@ -1,0 +1,3 @@
+1534809127
+%255BAppBundle%255CEntity%255CUser%2540%255BAnnot%255D%255D%255B1%255D
+a:5:{i:0;O:27:"Doctrine\ORM\Mapping\Entity":2:{s:15:"repositoryClass";N;s:8:"readOnly";b:0;}i:1;O:26:"Doctrine\ORM\Mapping\Table":5:{s:4:"name";s:8:"fos_user";s:6:"schema";N;s:7:"indexes";N;s:17:"uniqueConstraints";N;s:7:"options";a:0:{}}i:2;O:36:"Doctrine\ORM\Mapping\InheritanceType":1:{s:5:"value";s:12:"SINGLE_TABLE";}i:3;O:40:"Doctrine\ORM\Mapping\DiscriminatorColumn":5:{s:4:"name";s:4:"type";s:4:"type";s:6:"string";s:6:"length";i:255;s:9:"fieldName";N;s:16:"columnDefinition";N;}i:4;O:37:"Doctrine\ORM\Mapping\DiscriminatorMap":1:{s:5:"value";a:5:{s:5:"admin";s:5:"Admin";s:10:"enseignant";s:10:"Enseignant";s:8:"parental";s:8:"Parental";s:5:"eleve";s:5:"Eleve";s:4:"user";s:4:"User";}}}
