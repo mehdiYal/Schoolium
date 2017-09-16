@@ -147,3 +147,9 @@ df05ca,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/listTransports,1
 2b1c06,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/listTransports,1505585923,,200
 f3e811,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/listMenus,1505585926,,200
 53f006,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/addClasse,1505585945,,200
+7155ab,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/,1505586490,,200
+61b475,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/logout,1505586493,,302
+dce43a,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/,1505586493,,200
+2bf6dc,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/login,1505586495,,200
+9a0383,::1,POST,http://localhost:8888/Symfony/web/app_dev.php/fr/login_check,1505586500,,302
+17922b,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/,1505586500,,200
