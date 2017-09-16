@@ -62,7 +62,7 @@ class Eleve extends User
      *
      * @ORM\ManyToOne(targetEntity="Parental", inversedBy="eleves")
      *
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
      */
     private $parent;
 

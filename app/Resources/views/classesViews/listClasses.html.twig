@@ -3,7 +3,7 @@
 {% block body %}
 <h1>{{'list'|trans}} {{'classe'|trans}}</h1>
 	<ol>
-		{% for classe in classes %}
+		{% for classe in app.user.ecole.classes %}
 			<li>{{ classe.nom}} {{ classe.description}} {{ classe.annee.nom}} {{ classe.eleves|length}} <a href="{{ path('editClasse',{'id':classe.id})}}">Modifier</a> <a href="{{ path('removeClasse',{'id':classe.id})}}">Supprimer</a>
 		{% endfor %}
 	</ol>

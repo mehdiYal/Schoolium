@@ -3,7 +3,7 @@
 {% block body %}
 <h1>{{'list'|trans}} {{'students'|trans}}</h1>
 	<ol>
-		{% for eleve in eleves %}
+		{% for eleve in app.user.ecole.eleves %}
 			<li>{{ eleve.nom}} {{ eleve.prenom}} <a href="{{ path('editEleve',{'id':eleve.id})}}">{{'edit'|trans}}</a> <a href="{{ path('removeEleve',{'id':eleve.id})}}">{{'delete'|trans}}</a> <a href="{{ path('profileEleve',{'id':eleve.id})}}">{{'profile'|trans}}</a> <a href="{{ path('parentEleve',{'id':eleve.id})}}">{{'parent'|trans}}</a> <a href="{{ path('absenceEleve',{'id':eleve.id})}}">{{'absence'|trans}}</a> <a href="{{ path('retardEleve',{'id':eleve.id})}}">{{'retard'|trans}}</a></li>
 		{% endfor %}
 	</ol>

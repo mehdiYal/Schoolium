@@ -3,7 +3,7 @@
 {% block body %}
 <h1>{{'list'|trans}} {{'lignes'|trans}}</h1>
 	<ol>
-		{% for trans in transports %}
+		{% for trans in app.user.ecole.transports %}
 			<li>{{ trans.nom}} {{ trans.depart}} {{ trans.trajet}} {{ trans.heureDepart|date('h:m')}} {{ trans.capacite}} <a href="{{ path('editTransport',{'id':trans.id})}}">Modifier</a> <a href="{{ path('removeTransport',{'id':trans.id})}}">Supprimer</a>
 		{% endfor %}
 	</ol>
