@@ -19,6 +19,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="SchoolBundle">SchoolBundle\SchoolBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -75,6 +76,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/Applications/MAMP/htdocs/Symfony/src/SchoolBundle</parameter>
         <parameter key="namespace">SchoolBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineFixturesBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/Applications/MAMP/htdocs/Symfony/vendor/doctrine/doctrine-fixtures-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -497,6 +503,7 @@
     <service id="AppBundle\Controller\ParentalController" class="AppBundle\Controller\ParentalController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\DataFixtures\ORM\AdminFixtures" class="AppBundle\DataFixtures\ORM\AdminFixtures" public="false" autowire="true" autoconfigure="true"/>
     <service id="AppBundle\Form\AdminType" class="AppBundle\Form\AdminType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -698,7 +705,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>4PyWsAkqQ44Ot02eLNm7mF</argument>
+      <argument>h1V+14VKhcZhRgT5IiDwml</argument>
       <argument>/Applications/MAMP/htdocs/Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -708,7 +715,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>4PyWsAkqQ44Ot02eLNm7mF</argument>
+      <argument>h1V+14VKhcZhRgT5IiDwml</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -3081,12 +3088,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59a840d29374b9.58311751</argument>
+      <argument>59bd1859907925.96848047</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59a840d29374b9.58311751</argument>
+      <argument>59bd1859907925.96848047</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4676,7 +4683,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>HmTw1Op9zr</argument>
       <argument>0</argument>
-      <argument>4PyWsAkqQ44Ot02eLNm7mF</argument>
+      <argument>h1V+14VKhcZhRgT5IiDwml</argument>
       <argument>/Applications/MAMP/htdocs/Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4684,7 +4691,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>zG7auWC8H5</argument>
       <argument>0</argument>
-      <argument>4PyWsAkqQ44Ot02eLNm7mF</argument>
+      <argument>h1V+14VKhcZhRgT5IiDwml</argument>
       <argument>/Applications/MAMP/htdocs/Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4692,7 +4699,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Jnuv68VaGM</argument>
       <argument>0</argument>
-      <argument>4PyWsAkqQ44Ot02eLNm7mF</argument>
+      <argument>h1V+14VKhcZhRgT5IiDwml</argument>
       <argument>/Applications/MAMP/htdocs/Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4700,7 +4707,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>B0boMLLRkZ</argument>
       <argument>0</argument>
-      <argument>4PyWsAkqQ44Ot02eLNm7mF</argument>
+      <argument>h1V+14VKhcZhRgT5IiDwml</argument>
       <argument>/Applications/MAMP/htdocs/Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

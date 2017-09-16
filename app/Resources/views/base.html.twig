@@ -26,16 +26,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                {% if app.user %}
-                    {% if app.user.typeUser == 'Admin' %}
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {% if 'ROLE_ADMIN' in app.user.roles %}
                       {% include('adminsViews/admin.html.twig') %}
-                    {% elseif app.user.typeUser == 'Enseignant' %}
+                    {% elseif 'ROLE_ENSEIGNANT' in app.user.roles %}
                       {% include('enseignantsViews/enseignant.html.twig') %}
-                    {% elseif app.user.typeUser == 'Eleve' %}
+                    {% elseif 'ROLE_ELEVE' in app.user.roles %}
                       {% include('elevesViews/eleve.html.twig') %}
-                    {% elseif app.user.typeUser == 'Parent' %}
+                    {% elseif 'ROLE_PARENT' in app.user.roles %}
                       {% include('parentsViews/parent.html.twig') %}
-                    {% elseif app.user.typeUser == 'SuperAdmin' %}
+                    {% elseif 'ROLE_SUPER_ADMIN' in app.user.roles %}
                       {% include('adminsViews/superAdmin.html.twig') %}
                     {% endif %}
                     <li class=""><a href="{% if app.user.typeUser == 'Admin' %}{{ path('myProfileAdmin') }}{% elseif app.user.typeUser == 'Enseignant' %}{{ path('myProfileEnseignant') }}{% elseif app.user.typeUser == 'Eleve' %}{{ path('myProfileEleve') }}{% elseif app.user.typeUser == 'Parent' %}{{ path('myProfileParental') }}{% endif %}">{{'navbar.link.link11'|trans}}<span class="sr-only"></span></a></li>

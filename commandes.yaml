@@ -82,6 +82,10 @@ php bin/console debug:router
 #generate form
 php bin/console doctrine:generate:form SchoolBundle:Ecole
 
+#Load Fixtures
+php bin/console doctrine:fixtures:load
+
+
 
 ****************************************GitCommandes*****************************************************
 git push origin master

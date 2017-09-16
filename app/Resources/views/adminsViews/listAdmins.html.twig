@@ -5,11 +5,11 @@
 <h1>{{'list'|trans}} {{'admins'|trans}}</h1>
 	<ol>
 		{% for admin in admins %}
-			{% if admin.typeUser != 'SuperAdmin' %}
-				<li>{{ admin.nom}} {{ admin.prenom}} 
+			{% if 'ROLE_SUPER_ADMIN' not in admin.roles %}
+				<li>{{ admin.nom}} {{ admin.prenom}} {{ admin.username}} 
 					<a href="{{ path('editAdmin',{'id':admin.id})}}">{{'edit'|trans}}</a>
-					<a href="{{ path('profileAdmin',{'id':admin.id})}}">{{'profile'|trans}}</a> 
 					<a href="{{ path('removeAdmin',{'id':admin.id})}}">{{'delete'|trans}}</a>
+					<a href="{{ path('profileAdmin',{'id':admin.id})}}">{{'profile'|trans}}</a> 
 					<a href="{{ path('schoolAdmin',{'id':admin.id})}}">{{'school'|trans}}</a> 
 				</li>
 			{% endif %}
