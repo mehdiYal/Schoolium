@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.tagsinput.css') }}" />
+{% endblock %}
+
 {% block body %}
 <div class="container">
 <h1>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} {{'classe'|trans}}</h1>
@@ -25,8 +29,21 @@
 		    {{ form_widget(form.responsable ,{ 'attr': {'class': 'form-control'} }) }}
 		    {{ form_errors(form.responsable) }}
 		</div>
+		<div class="form-group">
+			{{ form_label(form.matieres) }}
+		    {{ form_widget(form.matieres ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.matieres) }}
+		</div>
 		<button type="submit">Valider</button>
 	{{ form_end(form) }}
 </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/jquery.tagsinput.js') }}"></script>
+	<script>
+		msg_add_tag="{{'global.add_tag'|trans()}}";
+    	$('.tags').tagsInput({width:'100%', 'defaultText':msg_add_tag});
+	</script>
 {% endblock %}

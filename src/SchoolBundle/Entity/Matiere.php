@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Matiere
 {
     /**
+     * @var Classe
+     *
+     * @ORM\ManyToMany(targetEntity="SchoolBundle\Entity\Classe",mappedBy="matieres")
+     */
+    private $classes;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -93,5 +100,49 @@ class Matiere
     {
         return $this->description;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->classes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add class
+     *
+     * @param \SchoolBundle\Entity\Classe $class
+     *
+     * @return Matiere
+     */
+    public function addClass(\SchoolBundle\Entity\Classe $class)
+    {
+        $this->classes[] = $class;
+
+        return $this;
+    }
+
+    /**
+     * Remove class
+     *
+     * @param \SchoolBundle\Entity\Classe $class
+     */
+    public function removeClass(\SchoolBundle\Entity\Classe $class)
+    {
+        $this->classes->removeElement($class);
+    }
+
+    /**
+     * Get classes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClasses()
+    {
+        return $this->classes;
+    }
+
+    public function __toString() {
+    return $this->nom;
+}
+}

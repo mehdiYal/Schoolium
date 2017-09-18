@@ -35,6 +35,16 @@ class Classe
     private $enseignants;
 
     /**
+     * @var Matiere
+     *
+     * @ORM\ManyToMany(targetEntity="SchoolBundle\Entity\Matiere",inversedBy="classes")
+     * @ORM\JoinTable(name="mat_cl",
+     *      joinColumns={@ORM\JoinColumn(name="cl", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="matieres", referencedColumnName="id")})
+     */
+    private $matieres;
+
+    /**
      * @var Enseignant
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Enseignant", inversedBy="isResponsable")
@@ -288,5 +298,39 @@ class Classe
     public function getEleves()
     {
         return $this->eleves;
+    }
+
+    /**
+     * Add matiere
+     *
+     * @param \SchoolBundle\Entity\Matiere $matiere
+     *
+     * @return Classe
+     */
+    public function addMatiere(\SchoolBundle\Entity\Matiere $matiere)
+    {
+        $this->matieres[] = $matiere;
+
+        return $this;
+    }
+
+    /**
+     * Remove matiere
+     *
+     * @param \SchoolBundle\Entity\Matiere $matiere
+     */
+    public function removeMatiere(\SchoolBundle\Entity\Matiere $matiere)
+    {
+        $this->matieres->removeElement($matiere);
+    }
+
+    /**
+     * Get matieres
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMatieres()
+    {
+        return $this->matieres;
     }
 }
