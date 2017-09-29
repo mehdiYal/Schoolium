@@ -347,3 +347,4 @@ b72193,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/,1506682327,,200
 318a6e,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/listEleves,1506682330,,200
 9c72b0,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/editEleve/495,1506682333,,200
 f821a5,::1,GET,http://localhost:8888/Symfony/web/app_dev.php/fr/,1506682498,,200
+0d27b4,::1,GET,http://localhost/Schoolium/web/app_dev.php/fr/login,1506701321,,200
