@@ -4,7 +4,14 @@
 <h1>{{'list'|trans}} {{'classe'|trans}}</h1>
 	<ol>
 		{% for classe in app.user.ecole.classes %}
-			<li>{{ classe.nom}} {{ classe.description}} {{ classe.annee.nom}} {{ classe.eleves|length}} <a href="{{ path('editClasse',{'id':classe.id})}}">Modifier</a> <a href="{{ path('removeClasse',{'id':classe.id})}}">Supprimer</a>
+			<li>
+				{{ classe.nom}} {{ classe.description}} {{ classe.annee.nom}} {{ classe.eleves|length}} {{ classe.responsable.nom}} <a href="{{ path('editClasse',{'id':classe.id})}}">Modifier</a> <a href="{{ path('removeClasse',{'id':classe.id})}}">Supprimer</a> <a href="{{ path('affectProf',{'id':classe.id})}}">affecter profs</a> 
+				<ol>
+					{% for mat in classe.ensMat %}
+						<li>{{ mat.matiere.nom}} {{ mat.enseignant.nom}}</li>
+					{% endfor %}
+				</ol>
+			</li>
 		{% endfor %}
 	</ol>
 	

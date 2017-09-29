@@ -39,11 +39,13 @@ class AnneeFixtures extends Fixture
         $annee6->setNom("1ere année");
         $annee6->setNiveau("CEM");
         $manager->persist($annee6);
+        $this->addReference('annee6', $annee6);
 
         $annee7 = new Annee();
         $annee7->setNom("2ème année");
         $annee7->setNiveau("CEM");
         $manager->persist($annee7);
+        $this->addReference('annee7', $annee7);
 
         $annee8 = new Annee();
         $annee8->setNom("3ème année");

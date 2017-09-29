@@ -14,6 +14,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Annee
 {
     /**
+     * @var Eleve
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Eleve",mappedBy="annee")
+     */
+    private $eleves;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -127,7 +134,7 @@ class Annee
     }
 
     public function __toString() {
-        return $this->nom;
+        return $this->nom.' '.$this->niveau;
     }
     /**
      * Constructor
@@ -169,5 +176,39 @@ class Annee
     public function getClasses()
     {
         return $this->classes;
+    }
+
+    /**
+     * Add elefe
+     *
+     * @param \AppBundle\Entity\Eleve $elefe
+     *
+     * @return Annee
+     */
+    public function addElefe(\AppBundle\Entity\Eleve $elefe)
+    {
+        $this->eleves[] = $elefe;
+
+        return $this;
+    }
+
+    /**
+     * Remove elefe
+     *
+     * @param \AppBundle\Entity\Eleve $elefe
+     */
+    public function removeElefe(\AppBundle\Entity\Eleve $elefe)
+    {
+        $this->eleves->removeElement($elefe);
+    }
+
+    /**
+     * Get eleves
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEleves()
+    {
+        return $this->eleves;
     }
 }

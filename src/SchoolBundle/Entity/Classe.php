@@ -16,33 +16,16 @@ class Classe
     /**
      * @var Eleve
      *
-     * @Assert\Type(type="AppBundle\Entity\Eleve")
-     *
-     * @Assert\Valid()
-     *
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Eleve",mappedBy="classe")
      */
     private $eleves;
 
     /**
-     * @var Enseignant
+     * @var EnsMat
      *
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Enseignant",inversedBy="classes")
-     * @ORM\JoinTable(name="ens_cl",
-     *      joinColumns={@ORM\JoinColumn(name="cl", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="ens", referencedColumnName="id")})
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\EnsMat",mappedBy="classe")
      */
-    private $enseignants;
-
-    /**
-     * @var Matiere
-     *
-     * @ORM\ManyToMany(targetEntity="SchoolBundle\Entity\Matiere",inversedBy="classes")
-     * @ORM\JoinTable(name="mat_cl",
-     *      joinColumns={@ORM\JoinColumn(name="cl", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="matieres", referencedColumnName="id")})
-     */
-    private $matieres;
+    private $ensMat;
 
     /**
      * @var Enseignant
@@ -332,5 +315,39 @@ class Classe
     public function getMatieres()
     {
         return $this->matieres;
+    }
+
+    /**
+     * Add ensMat
+     *
+     * @param \SchoolBundle\Entity\EnsMat $ensMat
+     *
+     * @return Classe
+     */
+    public function addEnsMat(\SchoolBundle\Entity\EnsMat $ensMat)
+    {
+        $this->ensMat[] = $ensMat;
+
+        return $this;
+    }
+
+    /**
+     * Remove ensMat
+     *
+     * @param \SchoolBundle\Entity\EnsMat $ensMat
+     */
+    public function removeEnsMat(\SchoolBundle\Entity\EnsMat $ensMat)
+    {
+        $this->ensMat->removeElement($ensMat);
+    }
+
+    /**
+     * Get ensMat
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEnsMat()
+    {
+        return $this->ensMat;
     }
 }

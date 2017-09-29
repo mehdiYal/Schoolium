@@ -5,11 +5,7 @@
 <h1>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} {{'student'|trans}}</h1>
 <div class="container">
 	{{ form_start(form) }}
-		<div class="form-group">
-			{{ form_label(form.photo) }}
-		    {{ form_widget(form.photo ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.photo) }}
-		</div>
+		
 		<div class="form-group">
 			{{ form_label(form.nom) }}
 		    {{ form_widget(form.nom ,{ 'attr': {'class': 'form-control'} }) }}
@@ -21,60 +17,10 @@
 		    {{ form_errors(form.prenom) }}
 		</div>
 		<div class="form-group">
-			{{ form_label(form.genre) }}
-		    {{ form_widget(form.genre ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.genre) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.dateDeNaissance) }}
-		    {{ form_widget(form.dateDeNaissance ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.dateDeNaissance) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.lieuDeNaissance) }}
-		    {{ form_widget(form.lieuDeNaissance ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.lieuDeNaissance) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.nationalite) }}
-		    {{ form_widget(form.nationalite ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.nationalite) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.adresse) }}
-		    {{ form_widget(form.adresse ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.adresse) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.codePostal) }}
-		    {{ form_widget(form.codePostal ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.codePostal) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.telephone) }}
-		    {{ form_widget(form.telephone ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.telephone) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.mobile) }}
-		    {{ form_widget(form.mobile ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.mobile) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.commentaire) }}
-		    {{ form_widget(form.commentaire ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.commentaire) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.ecoleID) }}
-		    {{ form_widget(form.ecoleID ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.ecoleID) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.groupeSanguin) }}
-		    {{ form_widget(form.groupeSanguin ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.groupeSanguin) }}
-		</div>
+			{{ form_label(form.annee) }}
+		    {{ form_widget(form.annee ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.annee) }}
+		</div>		
 		<div class="form-group">
 			{{ form_label(form.email) }}
 		    {{ form_widget(form.email ,{ 'attr': {'class': 'form-control'} }) }}

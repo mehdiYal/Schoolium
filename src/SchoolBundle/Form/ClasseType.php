@@ -13,7 +13,7 @@ class ClasseType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('description')->add('responsable')->add('annee')->add('matieres');
+        $builder->add('nom')->add('description')->add('responsable')->add('annee');
     }
     
     /**

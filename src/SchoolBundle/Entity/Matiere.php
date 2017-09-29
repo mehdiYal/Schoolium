@@ -13,11 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Matiere
 {
     /**
-     * @var Classe
+     * @var EnsMat
      *
-     * @ORM\ManyToMany(targetEntity="SchoolBundle\Entity\Classe",mappedBy="matieres")
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\EnsMat",mappedBy="matiere")
      */
-    private $classes;
+    private $ensMat;
 
     /**
      * @var int
@@ -144,5 +144,39 @@ class Matiere
 
     public function __toString() {
     return $this->nom;
-}
+    }
+
+    /**
+     * Add ensMat
+     *
+     * @param \SchoolBundle\Entity\EnsMat $ensMat
+     *
+     * @return Matiere
+     */
+    public function addEnsMat(\SchoolBundle\Entity\EnsMat $ensMat)
+    {
+        $this->ensMat[] = $ensMat;
+
+        return $this;
+    }
+
+    /**
+     * Remove ensMat
+     *
+     * @param \SchoolBundle\Entity\EnsMat $ensMat
+     */
+    public function removeEnsMat(\SchoolBundle\Entity\EnsMat $ensMat)
+    {
+        $this->ensMat->removeElement($ensMat);
+    }
+
+    /**
+     * Get ensMat
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEnsMat()
+    {
+        return $this->ensMat;
+    }
 }

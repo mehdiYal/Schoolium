@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use SchoolBundle\Entity\Classe;
 use SchoolBundle\Form\ClasseType;
+use SchoolBundle\Entity\EnsMat;
+use SchoolBundle\Form\EnsMatType;
 use Symfony\Component\HttpFoundation\Request;
 
 class ClasseController extends Controller
@@ -68,6 +70,26 @@ class ClasseController extends Controller
         $em->remove($classe);
         $em->flush();
         return $this->redirectToRoute('listClasses'); 
+    }
+
+    /**
+     * @Route("/affectProf/{id}", name="affectProf")
+     */
+    public function affectProf(Request $request,Classe $classe)
+    {
+        $ensMat = new EnsMat();
+        $form=$this->createForm(EnsMatType::class,$ensMat);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $ensMat->setClasse($classe);
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($ensMat);
+            $em->flush();
+            return $this->redirectToRoute('listClasses');
+        }
+
+        return $this->render('classesViews/affecterProf.html.twig',array("form"=>$form->createView(),"classe"=>$classe));
     }
 
 

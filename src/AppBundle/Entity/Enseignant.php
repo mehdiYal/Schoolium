@@ -25,11 +25,11 @@ class Enseignant extends User
     private $isResponsable;
 
     /**
-     * @var Classe
+     * @var EnsMat
      *
-     * @ORM\ManyToMany(targetEntity="SchoolBundle\Entity\Classe",mappedBy="enseignants")
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\EnsMat",mappedBy="enseignant")
      */
-    private $classes;
+    private $matsEns;
 
      /**
      * @var Ecole
@@ -569,5 +569,39 @@ class Enseignant extends User
     public function getClasses()
     {
         return $this->classes;
+    }
+
+    /**
+     * Add matsEn
+     *
+     * @param \SchoolBundle\Entity\EnsMat $matsEn
+     *
+     * @return Enseignant
+     */
+    public function addMatsEn(\SchoolBundle\Entity\EnsMat $matsEn)
+    {
+        $this->matsEns[] = $matsEn;
+
+        return $this;
+    }
+
+    /**
+     * Remove matsEn
+     *
+     * @param \SchoolBundle\Entity\EnsMat $matsEn
+     */
+    public function removeMatsEn(\SchoolBundle\Entity\EnsMat $matsEn)
+    {
+        $this->matsEns->removeElement($matsEn);
+    }
+
+    /**
+     * Get matsEns
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMatsEns()
+    {
+        return $this->matsEns;
     }
 }

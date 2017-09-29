@@ -33,7 +33,16 @@ class Eleve extends User
      *
      * @ORM\JoinColumn(nullable=true)
      */
-    private $classe;    
+    private $classe;
+
+    /**
+     * @var Annee
+     *
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Annee", inversedBy="eleves")
+     *
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $annee;    
 
     /**
      * @var Ecole
@@ -693,5 +702,29 @@ class Eleve extends User
     public function getAbsences()
     {
         return $this->absences;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param \SchoolBundle\Entity\Annee $annee
+     *
+     * @return Eleve
+     */
+    public function setAnnee(\SchoolBundle\Entity\Annee $annee = null)
+    {
+        $this->annee = $annee;
+
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return \SchoolBundle\Entity\Annee
+     */
+    public function getAnnee()
+    {
+        return $this->annee;
     }
 }

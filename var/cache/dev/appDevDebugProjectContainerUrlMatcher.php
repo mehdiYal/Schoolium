@@ -148,6 +148,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeClasse')), array (  '_controller' => 'SchoolBundle\\Controller\\ClasseController::removeAction',));
         }
 
+        // affectProf
+        if (preg_match('#^/(?P<_locale>[^/]++)/affectProf/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'affectProf')), array (  '_controller' => 'SchoolBundle\\Controller\\ClasseController::affectProf',));
+        }
+
         // addMatiere
         if (preg_match('#^/(?P<_locale>[^/]++)/addMatiere$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'addMatiere')), array (  '_controller' => 'SchoolBundle\\Controller\\MatiereController::addAction',));
