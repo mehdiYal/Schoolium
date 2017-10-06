@@ -10,4 +10,13 @@ namespace SchoolBundle\Repository;
  */
 class ClasseRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function findById($id)
+    {
+        $qb = $this->createQueryBuilder('c');
+      
+        $qb->where('c.id = :id')
+              ->setParameter('id', $id);
+        return $qb;
+    }  
 }

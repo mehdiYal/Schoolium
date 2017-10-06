@@ -66,7 +66,7 @@ class ClasseController extends Controller
      */
     public function removeAction(Classe $classe)
     {
-         $em=$this->getDoctrine()->getManager();
+        $em=$this->getDoctrine()->getManager();
         $em->remove($classe);
         $em->flush();
         return $this->redirectToRoute('listClasses'); 
@@ -91,6 +91,8 @@ class ClasseController extends Controller
 
         return $this->render('classesViews/affecterProf.html.twig',array("form"=>$form->createView(),"classe"=>$classe));
     }
+
+    
 
 
 }

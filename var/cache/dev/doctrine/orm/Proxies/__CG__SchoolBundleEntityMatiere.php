@@ -64,10 +64,10 @@ class Matiere extends \SchoolBundle\Entity\Matiere implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'ensMat', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'id', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'nom', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'description'];
+            return ['__isInitialized__', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'notes', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'evaluations', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'ensMat', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'id', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'nom', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'description'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'ensMat', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'id', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'nom', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'description'];
+        return ['__isInitialized__', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'notes', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'evaluations', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'ensMat', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'id', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'nom', '' . "\0" . 'SchoolBundle\\Entity\\Matiere' . "\0" . 'description'];
     }
 
     /**
@@ -307,6 +307,72 @@ class Matiere extends \SchoolBundle\Entity\Matiere implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEnsMat', []);
 
         return parent::getEnsMat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addNote(\AppBundle\Entity\Eleve $note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addNote', [$note]);
+
+        return parent::addNote($note);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeNote(\AppBundle\Entity\Eleve $note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNote', [$note]);
+
+        return parent::removeNote($note);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNotes()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNotes', []);
+
+        return parent::getNotes();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addEvaluation(\SchoolBundle\Entity\MatiereEvaluation $evaluation)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addEvaluation', [$evaluation]);
+
+        return parent::addEvaluation($evaluation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeEvaluation(\SchoolBundle\Entity\MatiereEvaluation $evaluation)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeEvaluation', [$evaluation]);
+
+        return parent::removeEvaluation($evaluation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEvaluations()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEvaluations', []);
+
+        return parent::getEvaluations();
     }
 
 }

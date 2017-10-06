@@ -64,10 +64,10 @@ class Eleve extends \AppBundle\Entity\Eleve implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'retards', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'absences', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'classe', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecole', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'transport', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'parent', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'typeUser', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'photo', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'dateDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'lieuDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nationalite', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'codePostal', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'mobile', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'genre', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecoleID', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'groupeSanguin', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'commentaire', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'notes', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'retards', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'absences', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'classe', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'annee', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecole', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'transport', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'parent', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'typeUser', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'photo', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'dateDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'lieuDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nationalite', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'codePostal', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'mobile', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'genre', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecoleID', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'groupeSanguin', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'commentaire', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'retards', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'absences', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'classe', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecole', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'transport', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'parent', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'typeUser', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'photo', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'dateDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'lieuDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nationalite', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'codePostal', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'mobile', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'genre', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecoleID', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'groupeSanguin', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'commentaire', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'notes', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'retards', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'absences', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'classe', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'annee', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecole', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'transport', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'parent', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'typeUser', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'photo', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'dateDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'lieuDeNaissance', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'nationalite', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'codePostal', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'mobile', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'genre', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'ecoleID', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'groupeSanguin', '' . "\0" . 'AppBundle\\Entity\\Eleve' . "\0" . 'commentaire', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'roles'];
     }
 
     /**
@@ -655,6 +655,61 @@ class Eleve extends \AppBundle\Entity\Eleve implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAbsences', []);
 
         return parent::getAbsences();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setAnnee(\SchoolBundle\Entity\Annee $annee = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAnnee', [$annee]);
+
+        return parent::setAnnee($annee);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAnnee()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnnee', []);
+
+        return parent::getAnnee();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addNote(\AppBundle\Entity\Eleve $note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addNote', [$note]);
+
+        return parent::addNote($note);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeNote(\AppBundle\Entity\Eleve $note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNote', [$note]);
+
+        return parent::removeNote($note);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNotes()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNotes', []);
+
+        return parent::getNotes();
     }
 
     /**

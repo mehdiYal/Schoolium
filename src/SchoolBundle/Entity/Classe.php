@@ -21,6 +21,11 @@ class Classe
     private $eleves;
 
     /**
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\MatiereEvaluation", mappedBy="matiere", cascade={"persist"})
+     */
+    private $evaluations;
+
+    /**
      * @var EnsMat
      *
      * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\EnsMat",mappedBy="classe")
@@ -250,27 +255,27 @@ class Classe
     }
 
     /**
-     * Add elefe
+     * Add eleve
      *
-     * @param \AppBundle\Entity\Eleve $elefe
+     * @param \AppBundle\Entity\Eleve $eleve
      *
      * @return Classe
      */
-    public function addElefe(\AppBundle\Entity\Eleve $elefe)
+    public function addElefe(\AppBundle\Entity\Eleve $eleve)
     {
-        $this->eleves[] = $elefe;
+        $this->eleves[] = $eleve;
 
         return $this;
     }
 
     /**
-     * Remove elefe
+     * Remove eleve
      *
-     * @param \AppBundle\Entity\Eleve $elefe
+     * @param \AppBundle\Entity\Eleve $eleve
      */
-    public function removeElefe(\AppBundle\Entity\Eleve $elefe)
+    public function removeEleve(\AppBundle\Entity\Eleve $eleve)
     {
-        $this->eleves->removeElement($elefe);
+        $this->eleves->removeElement($eleve);
     }
 
     /**
@@ -349,5 +354,49 @@ class Classe
     public function getEnsMat()
     {
         return $this->ensMat;
+    }
+
+    /**
+     * Remove elefe
+     *
+     * @param \AppBundle\Entity\Eleve $elefe
+     */
+    public function removeElefe(\AppBundle\Entity\Eleve $elefe)
+    {
+        $this->eleves->removeElement($elefe);
+    }
+
+    /**
+     * Add evaluation
+     *
+     * @param \SchoolBundle\Entity\MatiereEvaluation $evaluation
+     *
+     * @return Classe
+     */
+    public function addEvaluation(\SchoolBundle\Entity\MatiereEvaluation $evaluation)
+    {
+        $this->evaluations[] = $evaluation;
+    
+        return $this;
+    }
+
+    /**
+     * Remove evaluation
+     *
+     * @param \SchoolBundle\Entity\MatiereEvaluation $evaluation
+     */
+    public function removeEvaluation(\SchoolBundle\Entity\MatiereEvaluation $evaluation)
+    {
+        $this->evaluations->removeElement($evaluation);
+    }
+
+    /**
+     * Get evaluations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvaluations()
+    {
+        return $this->evaluations;
     }
 }

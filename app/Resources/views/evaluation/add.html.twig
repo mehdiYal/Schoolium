@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
+
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.matiere) }}
+		    {{ form_widget(form.matiere ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.matiere) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.classe) }}
+		    {{ form_widget(form.classe ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.classe) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.evaluation) }}
+		    {{ form_widget(form.evaluation ,{ 'attr': {'class': 'form-control'} }) }}
+		    {{ form_errors(form.evaluation) }}
+		</div>
+
+		<div class="form-group">
+			<input type="submit">
+		</div>
+		
+	{{ form_end(form) }}
+	
+{% endblock %}

@@ -12,6 +12,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Eleve extends User
 {
+    
+    /**
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\MatiereEleve", mappedBy="eleve", cascade={"persist"})
+     */
+    private $notes;
+
     /**
      * @var Classe
      *
@@ -726,5 +732,39 @@ class Eleve extends User
     public function getAnnee()
     {
         return $this->annee;
+    }
+
+    /**
+     * Add note
+     *
+     * @param \AppBundle\Entity\Eleve $note
+     *
+     * @return Eleve
+     */
+    public function addNote(\AppBundle\Entity\Eleve $note)
+    {
+        $this->notes[] = $note;
+    
+        return $this;
+    }
+
+    /**
+     * Remove note
+     *
+     * @param \AppBundle\Entity\Eleve $note
+     */
+    public function removeNote(\AppBundle\Entity\Eleve $note)
+    {
+        $this->notes->removeElement($note);
+    }
+
+    /**
+     * Get notes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNotes()
+    {
+        return $this->notes;
     }
 }

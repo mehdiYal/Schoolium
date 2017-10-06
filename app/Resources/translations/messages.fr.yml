@@ -68,5 +68,5 @@ profile: Profile
 matiere: Matiere
 annee: Année
 
-
- 
+global:
+    update: Mettre à jour

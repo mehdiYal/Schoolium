@@ -10,4 +10,14 @@ namespace SchoolBundle\Repository;
  */
 class MatiereRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function findById($id)
+    {
+        $qb = $this->createQueryBuilder('m');
+      
+        $qb->where('m.id = :id')
+              ->setParameter('id', $id);
+        return $qb;
+    }  
+
 }

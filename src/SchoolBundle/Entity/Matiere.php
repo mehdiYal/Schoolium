@@ -13,6 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Matiere
 {
     /**
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\MatiereEleve", mappedBy="matiere", cascade={"persist"})
+     */
+    private $notes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\MatiereEvaluation", mappedBy="matiere", cascade={"persist"})
+     */
+    private $evaluations;
+  
+    /**
      * @var EnsMat
      *
      * @ORM\OneToMany(targetEntity="SchoolBundle\Entity\EnsMat",mappedBy="matiere")
@@ -178,5 +188,74 @@ class Matiere
     public function getEnsMat()
     {
         return $this->ensMat;
+    }
+
+
+    /**
+     * Add note
+     *
+     * @param \AppBundle\Entity\Eleve $note
+     *
+     * @return Matiere
+     */
+    public function addNote(\AppBundle\Entity\Eleve $note)
+    {
+        $this->notes[] = $note;
+    
+        return $this;
+    }
+
+    /**
+     * Remove note
+     *
+     * @param \AppBundle\Entity\Eleve $note
+     */
+    public function removeNote(\AppBundle\Entity\Eleve $note)
+    {
+        $this->notes->removeElement($note);
+    }
+
+    /**
+     * Get notes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Add evaluation
+     *
+     * @param \SchoolBundle\Entity\MatiereEvaluation $evaluation
+     *
+     * @return Matiere
+     */
+    public function addEvaluation(\SchoolBundle\Entity\MatiereEvaluation $evaluation)
+    {
+        $this->evaluations[] = $evaluation;
+    
+        return $this;
+    }
+
+    /**
+     * Remove evaluation
+     *
+     * @param \SchoolBundle\Entity\MatiereEvaluation $evaluation
+     */
+    public function removeEvaluation(\SchoolBundle\Entity\MatiereEvaluation $evaluation)
+    {
+        $this->evaluations->removeElement($evaluation);
+    }
+
+    /**
+     * Get evaluations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvaluations()
+    {
+        return $this->evaluations;
     }
 }

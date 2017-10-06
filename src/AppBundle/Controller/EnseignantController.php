@@ -119,4 +119,20 @@ class EnseignantController extends Controller
         $enseignants=$repository->findAll();
         return $this->render('enseignantsViews/listEnseignants.html.twig',array("enseignants"=>$enseignants));
     }
+
+    /**
+     * @Route("/listeClasse/{id}", name="listeClasses")
+     */
+    public function showClasseAction(Request $request)
+    {
+         if (!$this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            throw $this->createAccessDeniedException();
+            }
+
+        $em = $this->getDoctrine()->getManager();
+        $enseignant=$em->getRepository('AppBundle:Enseignant')->findOneBy(array('id'=> $request->attributes->get('id') ));
+        $classes=$em->getRepository('SchoolBundle:EnsMat')->findBy(array('enseignant'=> $enseignant ));
+    
+        return $this->render('enseignantsViews/listClasses.html.twig',array("classes"=>$classes));
+    }
 }

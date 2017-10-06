@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
+{% dump(classes) %}
+	<ol>
+		{% for classe in classes %}
+			<li><a href="{{ path('showEleve', { 'idClasse': classe.classe.id, 'idMatiere': classe.matiere.id}) }}">{{classe.classe.ecole.nom~' '~classe.classe.nom~' '~classe.classe.annee.nom~' '~classe.classe.annee.niveau~' '~classe.matiere.nom}}</a></li>
+		{% endfor %}
+	</ol>
+	
+{% endblock %}

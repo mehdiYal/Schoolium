@@ -67,3 +67,5 @@ delete: حذف
 profile: الحساب
 matiere: مادة
 annee: سنة 
+global:
+    update: تحديث

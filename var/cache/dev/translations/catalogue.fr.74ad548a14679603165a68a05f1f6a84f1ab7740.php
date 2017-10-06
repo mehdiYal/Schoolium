@@ -253,6 +253,7 @@ L\'équipe
     'form.ecoleID' => 'ID de l\'école',
     'form.groupeSanguin' => 'Groupe Sanguin',
     'form.photo' => 'photo',
+    'global.update' => 'Mettre à jour',
   ),
 ));
 

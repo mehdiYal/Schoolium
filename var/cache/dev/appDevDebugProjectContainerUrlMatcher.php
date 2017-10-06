@@ -173,6 +173,39 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeMatiere')), array (  '_controller' => 'SchoolBundle\\Controller\\MatiereController::removeAction',));
         }
 
+        // showEleve
+        if (preg_match('#^/(?P<_locale>[^/]++)/showEleve/classe/(?P<idClasse>[^/]++)/matiere/(?P<idMatiere>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                $allow = array_merge($allow, array('GET', 'POST'));
+                goto not_showEleve;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'showEleve')), array (  '_controller' => 'SchoolBundle\\Controller\\MatiereController::showEleveAction',));
+        }
+        not_showEleve:
+
+        // addNote
+        if (preg_match('#^/(?P<_locale>[^/]++)/addNote$#s', $pathinfo, $matches)) {
+            if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                $allow = array_merge($allow, array('GET', 'POST'));
+                goto not_addNote;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'addNote')), array (  '_controller' => 'SchoolBundle\\Controller\\MatiereController::addNoteAction',));
+        }
+        not_addNote:
+
+        // addMatiereEvaluation
+        if (preg_match('#^/(?P<_locale>[^/]++)/addMatiereEvaluation/classe/(?P<idClasse>[^/]++)/matiere/(?P<idMatiere>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                $allow = array_merge($allow, array('GET', 'POST'));
+                goto not_addMatiereEvaluation;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'addMatiereEvaluation')), array (  '_controller' => 'SchoolBundle\\Controller\\MatiereEvaluationController::addAction',));
+        }
+        not_addMatiereEvaluation:
+
         // addMenu
         if (preg_match('#^/(?P<_locale>[^/]++)/addMenu$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'addMenu')), array (  '_controller' => 'SchoolBundle\\Controller\\MenuController::addAction',));
@@ -390,6 +423,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // listEnseignants
         if (preg_match('#^/(?P<_locale>[^/]++)/listEnseignants$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'listEnseignants')), array (  '_controller' => 'AppBundle\\Controller\\EnseignantController::showAction',));
+        }
+
+        // listeClasses
+        if (preg_match('#^/(?P<_locale>[^/]++)/listeClasse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'listeClasses')), array (  '_controller' => 'AppBundle\\Controller\\EnseignantController::showClasseAction',));
         }
 
         // addParental
