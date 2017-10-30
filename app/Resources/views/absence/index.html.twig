@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{#% if is_granted("IS_AUTHENTICATED_REMEMBERED") %#}
+         {#% # if 'ROLE_SUPER_ADMIN' in app.user.roles %#}
+           <!-- <a href="{{path('absence_new')}}">{{'absence.add'|trans}}</a> -->
+        {#% # endif %#}
+    {#% # endif %#}
+	<div class="container">
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.classe) }}
+		    {{ form_widget(form.classe) }}
+		    {{ form_errors(form.classe) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.annee) }}
+		    {{ form_widget(form.annee) }}
+		    {{ form_errors(form.annee) }}
+		</div>
+		
+		<button type="submit">Chercher</button>
+	{{ form_end(form) }}
+</div>
+<div class="container">
+	<ul>
+	{% for absence in absences %}
+		<li>{{absence.eleve.nom~' '~absence.eleve.prenom~' '~absence.date|date()~' '~absence.commentaire}}</li>
+	{% endfor %}
+	</ul>
+</div>
+
+{% endblock %}

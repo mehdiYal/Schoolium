@@ -1,0 +1,75 @@
+<?php
+
+namespace SchoolBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Programme
+ *
+ * @ORM\Table(name="programme")
+ * @ORM\Entity(repositoryClass="SchoolBundle\Repository\ProgrammeRepository")
+ */
+class Programme
+{
+    /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Enseignant")
+    * @ORM\JoinColumn(nullable=false)
+   */
+    private $enseignant;
+    
+   
+    /**
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Matiere")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $matiere;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Salle")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $salle;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Classe")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $classe;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Horraire")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $horraire;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="SchoolBundle\Entity\Jour")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $jour;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+   
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+   
+}

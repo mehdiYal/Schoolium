@@ -21,93 +21,90 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ada893f46a84f55d7742c4fe99904f7f4909d0a90a9a30b6e0feceec4ece33fa = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ada893f46a84f55d7742c4fe99904f7f4909d0a90a9a30b6e0feceec4ece33fa->enter($__internal_ada893f46a84f55d7742c4fe99904f7f4909d0a90a9a30b6e0feceec4ece33fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "matieresViews/eleves.html.twig"));
+        $__internal_7f9b61b944ad322c6959b2b7539bb8856507ba26630913f8c555a04d56bb662d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_7f9b61b944ad322c6959b2b7539bb8856507ba26630913f8c555a04d56bb662d->enter($__internal_7f9b61b944ad322c6959b2b7539bb8856507ba26630913f8c555a04d56bb662d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "matieresViews/eleves.html.twig"));
 
-        $__internal_142413f8f0aba9dd67eb902ad029b4895bf6cba783f89257453fe95ed1a04759 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_142413f8f0aba9dd67eb902ad029b4895bf6cba783f89257453fe95ed1a04759->enter($__internal_142413f8f0aba9dd67eb902ad029b4895bf6cba783f89257453fe95ed1a04759_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "matieresViews/eleves.html.twig"));
+        $__internal_631973d7a57a5a887510cff967fdae7eb0126b0f1436779bac5b689f7c156c4c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_631973d7a57a5a887510cff967fdae7eb0126b0f1436779bac5b689f7c156c4c->enter($__internal_631973d7a57a5a887510cff967fdae7eb0126b0f1436779bac5b689f7c156c4c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "matieresViews/eleves.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ada893f46a84f55d7742c4fe99904f7f4909d0a90a9a30b6e0feceec4ece33fa->leave($__internal_ada893f46a84f55d7742c4fe99904f7f4909d0a90a9a30b6e0feceec4ece33fa_prof);
+        $__internal_7f9b61b944ad322c6959b2b7539bb8856507ba26630913f8c555a04d56bb662d->leave($__internal_7f9b61b944ad322c6959b2b7539bb8856507ba26630913f8c555a04d56bb662d_prof);
 
         
-        $__internal_142413f8f0aba9dd67eb902ad029b4895bf6cba783f89257453fe95ed1a04759->leave($__internal_142413f8f0aba9dd67eb902ad029b4895bf6cba783f89257453fe95ed1a04759_prof);
+        $__internal_631973d7a57a5a887510cff967fdae7eb0126b0f1436779bac5b689f7c156c4c->leave($__internal_631973d7a57a5a887510cff967fdae7eb0126b0f1436779bac5b689f7c156c4c_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7372aeecfe35279f531372cd65238c46ebf46e74e79a78f1a65d248213e81f4a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7372aeecfe35279f531372cd65238c46ebf46e74e79a78f1a65d248213e81f4a->enter($__internal_7372aeecfe35279f531372cd65238c46ebf46e74e79a78f1a65d248213e81f4a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0efc22db651a7ae22b65785c80a766fde791e3776fe35b568107946c9936583b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0efc22db651a7ae22b65785c80a766fde791e3776fe35b568107946c9936583b->enter($__internal_0efc22db651a7ae22b65785c80a766fde791e3776fe35b568107946c9936583b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_7f8d8007a030798a0f4e88e466b7477b5fa2fc9b4a8a9c567b1a43d6432c95d0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7f8d8007a030798a0f4e88e466b7477b5fa2fc9b4a8a9c567b1a43d6432c95d0->enter($__internal_7f8d8007a030798a0f4e88e466b7477b5fa2fc9b4a8a9c567b1a43d6432c95d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e5928c3abd9c7bcd269b6db17184eef015e75586a524d61783242ff4899db834 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e5928c3abd9c7bcd269b6db17184eef015e75586a524d61783242ff4899db834->enter($__internal_e5928c3abd9c7bcd269b6db17184eef015e75586a524d61783242ff4899db834_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
 
-<h1>";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("list"), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("teachers"), "html", null, true);
-        echo "</h1>
 \t<ol>
 \t";
-        // line 8
+        // line 7
         $context["i"] = 0;
-        // line 9
-        echo "\t";
-        if ($this->env->isDebug()) {
-            \Symfony\Component\VarDumper\VarDumper::dump(($context["datas"] ?? $this->getContext($context, "datas")));
-        }
-        // line 10
+        // line 8
         echo "\t\t";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "data", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["data"]) {
-            // line 11
+            // line 9
             echo "\t\t<form name=\"addNote\" id=\"addNote\" action=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addNote");
             echo "\" method=\"post\">
 \t\t\t";
-            // line 12
+            // line 10
             if ((($context["i"] ?? $this->getContext($context, "i")) == 0)) {
-                // line 13
+                // line 11
                 echo "\t\t\t<a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addMatiereEvaluation", array("idClasse" => $this->getAttribute($this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "classe", array()), "id", array()), "idMatiere" => $this->getAttribute($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "matiere", array()), "id", array()))), "html", null, true);
-                echo "\">Ajouter une evaluation</a>
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("evaluation.add"), "html", null, true);
+                echo "</a>
+\t\t\t<a href=\"";
+                // line 12
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("new_cours", array("idClasse" => $this->getAttribute($this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "classe", array()), "id", array()), "idMatiere" => $this->getAttribute($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "matiere", array()), "id", array()))), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("cours.add"), "html", null, true);
+                echo "</a>
 \t\t\t<input type=\"hidden\" name=\"idClasse\" value=\"";
-                // line 14
+                // line 13
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "classe", array()), "id", array()), "html", null, true);
                 echo "\">
 \t\t\t";
             }
-            // line 16
+            // line 15
             echo "\t\t\t<li>";
             echo twig_escape_filter($this->env, (((($this->getAttribute($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "matiere", array()), "nom", array()) . " ") . $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "nom", array())) . " ") . $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "prenom", array())), "html", null, true);
             echo "
 \t\t\t\t";
-            // line 17
+            // line 16
             $context["j"] = 0;
-            // line 18
+            // line 17
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "evaluations", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["evaluation"]) {
-                // line 19
+                // line 18
                 echo "
 \t\t\t\t\t";
-                // line 20
+                // line 19
                 $context["bool"] = false;
-                // line 21
+                // line 20
                 echo "\t\t\t\t\t
 \t\t\t\t\t";
-                // line 22
+                // line 21
                 if ( !(null === $this->getAttribute($context["data"], "note", array()))) {
-                    // line 23
+                    // line 22
                     echo "\t\t\t\t\t\t";
                     $context['_parent'] = $context;
                     $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["data"], "note", array()));
@@ -125,8 +122,10 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
                         $context['loop']['last'] = 1 === $length;
                     }
                     foreach ($context['_seq'] as $context["_key"] => $context["notes"]) {
+                        // line 23
+                        echo "\t\t\t\t\t\t\t<div>
+\t\t\t\t\t\t\t";
                         // line 24
-                        echo "\t\t\t\t\t\t\t";
                         if (((($context["bool"] ?? $this->getContext($context, "bool")) == false) && ($this->getAttribute($context["notes"], "evaluation_id", array()) == $this->getAttribute($context["evaluation"], "id", array())))) {
                             // line 25
                             echo "
@@ -138,7 +137,7 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
                             echo twig_escape_filter($this->env, ($context["i"] ?? $this->getContext($context, "i")), "html", null, true);
                             echo "\" value=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute($context["evaluation"], "nom", array()), "html", null, true);
-                            echo "\">
+                            echo "\" disabled>
 \t\t\t\t\t\t\t\t<input type=\"number\" name=\"eleve";
                             // line 29
                             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
@@ -163,38 +162,44 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
                             echo "MatiereEleve\" value=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute($context["notes"], "id", array()), "html", null, true);
                             echo "\">
-\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t<a href=\"";
                             // line 32
-                            $context["bool"] = true;
+                            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("delete_note", array("id" => $this->getAttribute($context["notes"], "id", array()))), "html", null, true);
+                            echo "\">";
+                            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("global.delete"), "html", null, true);
+                            echo "</a>
+\t\t\t\t\t\t\t\t";
                             // line 33
+                            $context["bool"] = true;
+                            // line 34
                             echo "\t\t\t\t\t\t\t\t";
                             $context["j"] = (($context["j"] ?? $this->getContext($context, "j")) + 1);
-                            // line 34
+                            // line 35
                             echo "
 \t\t\t\t\t\t\t";
                         }
-                        // line 36
+                        // line 37
                         echo "\t\t\t\t\t\t\t";
                         if (($this->getAttribute($context["loop"], "last", array()) && (($context["bool"] ?? $this->getContext($context, "bool")) == false))) {
-                            // line 37
+                            // line 38
                             echo "
 \t\t\t\t\t\t\t\t";
-                            // line 39
+                            // line 40
                             echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<input type=\"text\" name=\"evaluation";
-                            // line 40
+                            // line 41
                             echo twig_escape_filter($this->env, ($context["i"] ?? $this->getContext($context, "i")), "html", null, true);
                             echo "\" value=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute($context["evaluation"], "nom", array()), "html", null, true);
-                            echo "\">
+                            echo "\" disabled>
 \t\t\t\t\t\t\t\t<input type=\"number\" name=\"eleve";
-                            // line 41
+                            // line 42
                             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
                             echo "id";
                             echo twig_escape_filter($this->env, ($context["j"] ?? $this->getContext($context, "j")), "html", null, true);
                             echo "note\" value=\"\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"eleve";
-                            // line 42
+                            // line 43
                             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
                             echo "id";
                             echo twig_escape_filter($this->env, ($context["j"] ?? $this->getContext($context, "j")), "html", null, true);
@@ -202,21 +207,19 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
                             echo twig_escape_filter($this->env, $this->getAttribute($context["evaluation"], "id", array()), "html", null, true);
                             echo "\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"eleve";
-                            // line 43
+                            // line 44
                             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
                             echo "id";
                             echo twig_escape_filter($this->env, ($context["j"] ?? $this->getContext($context, "j")), "html", null, true);
                             echo "MatiereEleve\" value=\"-1\">
 \t\t\t\t\t\t\t\t";
-                            // line 44
-                            $context["j"] = (($context["j"] ?? $this->getContext($context, "j")) + 1);
                             // line 45
+                            $context["j"] = (($context["j"] ?? $this->getContext($context, "j")) + 1);
+                            // line 46
                             echo "\t\t\t\t\t\t\t";
                         }
-                        // line 46
-                        echo "
-\t\t\t\t\t\t\t
-
+                        // line 47
+                        echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t";
                         ++$context['loop']['index0'];
                         ++$context['loop']['index'];
@@ -230,29 +233,29 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notes'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 50
+                    // line 49
                     echo "\t\t\t\t\t";
                 } else {
                     echo "\t
 
 \t\t\t\t\t\t";
-                    // line 52
+                    // line 51
                     echo "\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t<input type=\"text\" name=\"evaluation";
-                    // line 54
+                    // line 53
                     echo twig_escape_filter($this->env, ($context["i"] ?? $this->getContext($context, "i")), "html", null, true);
                     echo "\" value=\"";
                     echo twig_escape_filter($this->env, $this->getAttribute($context["evaluation"], "nom", array()), "html", null, true);
-                    echo "\">
+                    echo "\" disabled>
 \t\t\t\t\t\t<input type=\"number\" name=\"eleve";
-                    // line 55
+                    // line 54
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
                     echo "id";
                     echo twig_escape_filter($this->env, ($context["j"] ?? $this->getContext($context, "j")), "html", null, true);
                     echo "note\" value=\"\">
 \t\t\t\t\t\t<input type=\"hidden\" name=\"eleve";
-                    // line 56
+                    // line 55
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
                     echo "id";
                     echo twig_escape_filter($this->env, ($context["j"] ?? $this->getContext($context, "j")), "html", null, true);
@@ -260,69 +263,105 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
                     echo twig_escape_filter($this->env, $this->getAttribute($context["evaluation"], "id", array()), "html", null, true);
                     echo "\">
 \t\t\t\t\t\t<input type=\"hidden\" name=\"eleve";
-                    // line 57
+                    // line 56
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
                     echo "id";
                     echo twig_escape_filter($this->env, ($context["j"] ?? $this->getContext($context, "j")), "html", null, true);
                     echo "MatiereEleve\" value=\"-1\">
-
 \t\t\t\t\t\t";
-                    // line 59
+                    // line 57
                     $context["j"] = (($context["j"] ?? $this->getContext($context, "j")) + 1);
-                    // line 60
+                    // line 58
                     echo "
 \t\t\t\t\t";
                 }
-                // line 62
+                // line 60
                 echo "\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evaluation'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
+            // line 61
             echo "\t\t\t\t<input type=\"hidden\" name=\"idmatiere";
             echo twig_escape_filter($this->env, ($context["i"] ?? $this->getContext($context, "i")), "html", null, true);
             echo "\" value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "matiere", array()), "id", array()), "html", null, true);
             echo "\">
 \t\t\t\t<input type=\"hidden\" name=\"ideleve";
-            // line 64
+            // line 62
             echo twig_escape_filter($this->env, ($context["i"] ?? $this->getContext($context, "i")), "html", null, true);
             echo "\" value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["data"], "eleve", array()), "id", array()), "html", null, true);
             echo "\">
 \t\t\t\t<input type=\"hidden\" name=\"lengthEvaluation\" value=\"";
-            // line 65
+            // line 63
             echo twig_escape_filter($this->env, twig_length_filter($this->env, $this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "evaluations", array())), "html", null, true);
             echo "\">
 \t\t\t</li>
 \t\t\t";
-            // line 67
+            // line 65
             $context["i"] = (($context["i"] ?? $this->getContext($context, "i")) + 1);
-            // line 68
+            // line 66
             echo "\t\t\t
 \t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['data'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 68
         echo "\t\t<input type=\"hidden\" name=\"cpt\" value=\"";
         echo twig_escape_filter($this->env, ($context["i"] ?? $this->getContext($context, "i")), "html", null, true);
         echo "\">
 \t\t<input type=\"submit\" value=\"";
-        // line 71
+        // line 69
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("global.update"), "html", null, true);
         echo "\">
 \t\t</form>
 \t</ol>
+
+\t<ol>
+\t\t";
+        // line 74
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["datas"] ?? $this->getContext($context, "datas")), "cours", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["cours"]) {
+            // line 75
+            echo "\t\t<li>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["cours"], "titre", array()), "html", null, true);
+            echo " 
+\t\t\t<a href=\"";
+            // line 76
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(((($context["uploads_cours_support"] ?? $this->getContext($context, "uploads_cours_support")) . "/") . $this->getAttribute($context["cours"], "support", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("cours.support.title"), "html", null, true);
+            echo "</a> 
+\t\t\t<a href=\"";
+            // line 77
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(((($context["uploads_cours_devoir"] ?? $this->getContext($context, "uploads_cours_devoir")) . "/") . $this->getAttribute($context["cours"], "devoir", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("devoir.maison.title"), "html", null, true);
+            echo "</a> 
+\t\t\t<a href=\"";
+            // line 78
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(((($context["uploads_cours_annexe"] ?? $this->getContext($context, "uploads_cours_annexe")) . "/") . $this->getAttribute($context["cours"], "annexe", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("cours.annexe.title"), "html", null, true);
+            echo "</a>
+\t\t</li>
+\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cours'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 81
+        echo "\t</ol>
 \t
 ";
         
-        $__internal_7f8d8007a030798a0f4e88e466b7477b5fa2fc9b4a8a9c567b1a43d6432c95d0->leave($__internal_7f8d8007a030798a0f4e88e466b7477b5fa2fc9b4a8a9c567b1a43d6432c95d0_prof);
+        $__internal_e5928c3abd9c7bcd269b6db17184eef015e75586a524d61783242ff4899db834->leave($__internal_e5928c3abd9c7bcd269b6db17184eef015e75586a524d61783242ff4899db834_prof);
 
         
-        $__internal_7372aeecfe35279f531372cd65238c46ebf46e74e79a78f1a65d248213e81f4a->leave($__internal_7372aeecfe35279f531372cd65238c46ebf46e74e79a78f1a65d248213e81f4a_prof);
+        $__internal_0efc22db651a7ae22b65785c80a766fde791e3776fe35b568107946c9936583b->leave($__internal_0efc22db651a7ae22b65785c80a766fde791e3776fe35b568107946c9936583b_prof);
 
     }
 
@@ -338,7 +377,7 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
 
     public function getDebugInfo()
     {
-        return array (  315 => 71,  310 => 70,  303 => 68,  301 => 67,  296 => 65,  290 => 64,  283 => 63,  277 => 62,  273 => 60,  271 => 59,  264 => 57,  256 => 56,  250 => 55,  244 => 54,  240 => 52,  234 => 50,  217 => 46,  214 => 45,  212 => 44,  206 => 43,  198 => 42,  192 => 41,  186 => 40,  183 => 39,  180 => 37,  177 => 36,  173 => 34,  170 => 33,  168 => 32,  160 => 31,  152 => 30,  144 => 29,  138 => 28,  135 => 27,  132 => 25,  129 => 24,  111 => 23,  109 => 22,  106 => 21,  104 => 20,  101 => 19,  96 => 18,  94 => 17,  89 => 16,  84 => 14,  79 => 13,  77 => 12,  72 => 11,  67 => 10,  62 => 9,  60 => 8,  53 => 6,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  357 => 81,  346 => 78,  340 => 77,  334 => 76,  329 => 75,  325 => 74,  317 => 69,  312 => 68,  305 => 66,  303 => 65,  298 => 63,  292 => 62,  285 => 61,  279 => 60,  275 => 58,  273 => 57,  267 => 56,  259 => 55,  253 => 54,  247 => 53,  243 => 51,  237 => 49,  222 => 47,  219 => 46,  217 => 45,  211 => 44,  203 => 43,  197 => 42,  191 => 41,  188 => 40,  185 => 38,  182 => 37,  178 => 35,  175 => 34,  173 => 33,  167 => 32,  159 => 31,  151 => 30,  143 => 29,  137 => 28,  134 => 27,  131 => 25,  129 => 24,  126 => 23,  108 => 22,  106 => 21,  103 => 20,  101 => 19,  98 => 18,  93 => 17,  91 => 16,  86 => 15,  81 => 13,  75 => 12,  68 => 11,  66 => 10,  61 => 9,  56 => 8,  54 => 7,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -356,14 +395,13 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
 {% block body %}
 
 
-<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
 \t<ol>
 \t{% set i=0 %}
-\t{% dump(datas) %}
 \t\t{% for data in datas.data %}
 \t\t<form name=\"addNote\" id=\"addNote\" action=\"{{path('addNote')}}\" method=\"post\">
 \t\t\t{% if i==0 %}
-\t\t\t<a href=\"{{ path('addMatiereEvaluation', { 'idClasse': data.eleve.classe.id, 'idMatiere': datas.matiere.id}) }}\">Ajouter une evaluation</a>
+\t\t\t<a href=\"{{ path('addMatiereEvaluation', { 'idClasse': data.eleve.classe.id, 'idMatiere': datas.matiere.id}) }}\">{{'evaluation.add'|trans}}</a>
+\t\t\t<a href=\"{{ path('new_cours', { 'idClasse': data.eleve.classe.id, 'idMatiere': datas.matiere.id}) }}\">{{'cours.add'|trans}}</a>
 \t\t\t<input type=\"hidden\" name=\"idClasse\" value=\"{{data.eleve.classe.id}}\">
 \t\t\t{% endif %}
 \t\t\t<li>{{datas.matiere.nom~' '~data.eleve.nom~' '~data.eleve.prenom}}
@@ -374,14 +412,16 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
 \t\t\t\t\t
 \t\t\t\t\t{% if(data.note is not null) %}
 \t\t\t\t\t\t{% for notes in data.note %}
+\t\t\t\t\t\t\t<div>
 \t\t\t\t\t\t\t{% if bool==false and notes.evaluation_id==evaluation.id %}
 
 \t\t\t\t\t\t\t\t{# Cas où l'evaluation a été noté #}
 \t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<input type=\"text\" name=\"evaluation{{i}}\" value=\"{{evaluation.nom}}\">
+\t\t\t\t\t\t\t\t<input type=\"text\" name=\"evaluation{{i}}\" value=\"{{evaluation.nom}}\" disabled>
 \t\t\t\t\t\t\t\t<input type=\"number\" name=\"eleve{{data.eleve.id}}id{{j}}note\" value=\"{{notes.note}}\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"eleve{{data.eleve.id}}id{{j}}Evaluation\" value=\"{{evaluation.id}}\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"eleve{{data.eleve.id}}id{{j}}MatiereEleve\" value=\"{{notes.id}}\">
+\t\t\t\t\t\t\t\t<a href=\"{{path('delete_note', { 'id': notes.id })}}\">{{'global.delete'|trans()}}</a>
 \t\t\t\t\t\t\t\t{% set bool=true %}
 \t\t\t\t\t\t\t\t{% set j=j+1 %}
 
@@ -390,25 +430,22 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
 
 \t\t\t\t\t\t\t\t{# Cas où l'evaluation n'a pas été noté #}
 \t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<input type=\"text\" name=\"evaluation{{i}}\" value=\"{{evaluation.nom}}\">
+\t\t\t\t\t\t\t\t<input type=\"text\" name=\"evaluation{{i}}\" value=\"{{evaluation.nom}}\" disabled>
 \t\t\t\t\t\t\t\t<input type=\"number\" name=\"eleve{{data.eleve.id}}id{{j}}note\" value=\"\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"eleve{{data.eleve.id}}id{{j}}Evaluation\" value=\"{{evaluation.id}}\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"eleve{{data.eleve.id}}id{{j}}MatiereEleve\" value=\"-1\">
 \t\t\t\t\t\t\t\t{% set j=j+1 %}
 \t\t\t\t\t\t\t{% endif %}
-
-\t\t\t\t\t\t\t
-
+\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t{% endfor %}
 \t\t\t\t\t{% else %}\t
 
 \t\t\t\t\t\t{# Cas où l'eleve n'a pas été noté #}\t
 \t\t\t\t\t\t
-\t\t\t\t\t\t<input type=\"text\" name=\"evaluation{{i}}\" value=\"{{evaluation.nom}}\">
+\t\t\t\t\t\t<input type=\"text\" name=\"evaluation{{i}}\" value=\"{{evaluation.nom}}\" disabled>
 \t\t\t\t\t\t<input type=\"number\" name=\"eleve{{data.eleve.id}}id{{j}}note\" value=\"\">
 \t\t\t\t\t\t<input type=\"hidden\" name=\"eleve{{data.eleve.id}}id{{j}}Evaluation\" value=\"{{evaluation.id}}\">
 \t\t\t\t\t\t<input type=\"hidden\" name=\"eleve{{data.eleve.id}}id{{j}}MatiereEleve\" value=\"-1\">
-
 \t\t\t\t\t\t{% set j=j+1 %}
 
 \t\t\t\t\t{% endif %}
@@ -423,6 +460,16 @@ class __TwigTemplate_32b1cc5f6e25dba7eaa61a8f2fcd6ee63fd39a191e399b01256e0226831
 \t\t<input type=\"hidden\" name=\"cpt\" value=\"{{i}}\">
 \t\t<input type=\"submit\" value=\"{{'global.update'|trans}}\">
 \t\t</form>
+\t</ol>
+
+\t<ol>
+\t\t{% for cours in datas.cours %}
+\t\t<li>{{cours.titre}} 
+\t\t\t<a href=\"{{asset(uploads_cours_support~'/'~cours.support)}}\">{{'cours.support.title'|trans}}</a> 
+\t\t\t<a href=\"{{asset(uploads_cours_devoir~'/'~cours.devoir)}}\">{{'devoir.maison.title'|trans}}</a> 
+\t\t\t<a href=\"{{asset(uploads_cours_annexe~'/'~cours.annexe)}}\">{{'cours.annexe.title'|trans}}</a>
+\t\t</li>
+\t\t{% endfor %}
 \t</ol>
 \t
 {% endblock %}", "matieresViews/eleves.html.twig", "C:\\wamp64\\www\\Schoolium\\app\\Resources\\views\\matieresViews\\eleves.html.twig");

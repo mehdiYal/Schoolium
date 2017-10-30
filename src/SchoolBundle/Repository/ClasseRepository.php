@@ -19,4 +19,13 @@ class ClasseRepository extends \Doctrine\ORM\EntityRepository
               ->setParameter('id', $id);
         return $qb;
     }  
+
+    public function findByEnseignant($id)
+    {
+        $qb = $this->createQueryBuilder('c');
+      
+        $qb->where('c.responsable = :id')
+              ->setParameter('id', $id);
+        return $qb;
+    }  
 }

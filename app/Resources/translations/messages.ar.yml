@@ -67,5 +67,37 @@ delete: حذف
 profile: الحساب
 matiere: مادة
 annee: سنة 
+
+devoir:
+    maison:
+        title: واجب منزلي
+        add: إضافة واجب منزلي
+
+evaluation:
+    add: إضافة تقييم
+
+cours: 
+    add: إضافة درس
+    support: 
+        title: دعم بالطبع
+        add: إضافة الدعم
+    annexe: 
+        title: كتب و مراجع خارجية
+        add: إضافة ملحق
+
+message:
+    send: إرسال رسالة
+
 global:
     update: تحديث
+    program: جدول أوقات
+    add: اضافة
+    delete: حذف
+    edit: تعديل
+    annual:
+        program: البرنامج السنوي
+
+absence:
+    title: الغيابات
+    add: إضافة الغيابات
+    manage: إدارة الغيابات

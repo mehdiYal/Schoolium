@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container">
+	{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.titre) }}
+		    {{ form_widget(form.titre) }}
+		    {{ form_errors(form.titre) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.devoir) }}
+		    {{ form_widget(form.devoir) }}
+		    {{ form_errors(form.devoir) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.support) }}
+		    {{ form_widget(form.support) }}
+		    {{ form_errors(form.support) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.annexe) }}
+		    {{ form_widget(form.annexe) }}
+		    {{ form_errors(form.annexe) }}
+		</div>
+		<input type="hidden" name="idClasse" value="{{idClasse}}">
+		<input type="hidden" name="idMatiere" value="{{idMatiere}}">
+		<button type="submit">Valider</button>
+	{{ form_end(form) }}
+</div>
+
+{% endblock %}

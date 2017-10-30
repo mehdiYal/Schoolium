@@ -8,10 +8,16 @@ use SchoolBundle\Entity\Annee;
 use SchoolBundle\Form\AnneeType;
 use Symfony\Component\HttpFoundation\Request;
 
+
+/**
+ * Annee controller.
+ *
+ * @Route("/annee")
+ */
 class AnneeController extends Controller
 {
     /**
-     * @Route("/addAnnee", name="addAnnee")
+     * @Route("/add", name="addAnnee")
      */
     public function addAction(Request $request)
     {
@@ -32,7 +38,7 @@ class AnneeController extends Controller
 
 
     /**
-     * @Route("/listAnnees", name="listAnnees")
+     * @Route("/list", name="listAnnees")
      */
     public function showAction(Request $request)
     {
@@ -42,7 +48,7 @@ class AnneeController extends Controller
     }
 
      /**
-     * @Route("/editAnnee/{id}", name="editAnnee")
+     * @Route("/edit/{id}", name="editAnnee")
      */
     public function editAction(Request $request,Annee $annee)
     {
@@ -61,7 +67,7 @@ class AnneeController extends Controller
 
 
      /**
-     * @Route("/removeAnnee/{id}", name="removeAnnee")
+     * @Route("/remove/{id}", name="removeAnnee")
      */
     public function removeAction(Annee $annee)
     {

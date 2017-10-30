@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+{%dump(data)%}
+	<table>
+		
+	{% for jour in data.jour %}
+		<th>
+			{{jour.nom}}
+		</th>
+		
+		{% for horraire in data.horraire %}
+		<tr>	
+				<td>{{horraire.heureDeb|date('H')~'H - '~horraire.heureFin|date('H')~'H'}}</td>
+				{% for programme in data.programme %}
+					{% if programme.jour.id==jour.id and programme.horraire.id==horraire.id %}
+					<td>{{programme.matiere.nom~' '~programme.enseignant.nom~' '~programme.salle.nom}}</td>
+					{% endif %}
+				{% endfor %}
+				
+		</tr>
+		{% endfor %}
+	{% endfor %}
+
+	
+	</table>
+
+{% endblock %}

@@ -1,23 +1,23 @@
 navbar:
   link:
     link1: ajouter admin
-    link2: list des admins
+    link2: liste des admins
     link3: ajouter enseignant
-    link4: list des enseignants
+    link4: liste des enseignants
     link5: ajouter eleve
-    link6: list des eleves
+    link6: liste des eleves
     link7: ajouter parent
-    link8: list des parents
+    link8: liste des parents
     link9: ajouter ecole
-    link10: list des ecoles
+    link10: liste des ecoles
     link11: Mon profile
     link12: Deconnexion
     link13: Connexion
     link14: ajouter matiere
-    link15: list des matieres
+    link15: liste des matieres
     link16: Mon ecole
     link17: ajouter année
-    link18: list des années
+    link18: liste des années
   dropdown:
     dropdown1: Admins
     dropdown2: Enseignants
@@ -62,11 +62,42 @@ students: Elèves
 teachers: Enseignants
 parents: Parents
 schools: Ecoles
-list: List des
+list: Liste des
 delete: supprimer
 profile: Profile
 matiere: Matiere
 annee: Année
 
+cours: 
+    add: Ajouter un cours
+    support: 
+        title: Support de cours
+        add: Ajouter un support
+    annexe: 
+        title: Annexe
+        add: Ajouter une annexe
+
+message:
+    send: Envoyer message
+
+devoir:
+    maison:
+        title: Devoir maison
+        add: Ajouter un devoir maison
+
+evaluation:
+    add: Ajouter une evaluation
+
 global:
     update: Mettre à jour
+    program: Emploi du temps
+    add: Ajouter
+    delete: supprimer
+    edit: Modifier
+    annual:
+        program: Programme Annuel
+
+absence:
+    title: Absence
+    add: Ajouter une absence
+    manage: Gérer les absences

@@ -20,4 +20,18 @@ class MatiereRepository extends \Doctrine\ORM\EntityRepository
         return $qb;
     }  
 
+    public function findByArrayId($id)
+    {
+        $qb = $this->createQueryBuilder('m');
+      
+       // $qb->where('m.id in (:id)')
+        $qb->add('where', $qb->expr()->in('m.id', $id));
+        //      ->setParameter('id', $id, \Doctrine\DBAL\Connection::PARAM_STR_ARRAY);
+        return $qb;
+    }
+
+ 
+
+
+
 }

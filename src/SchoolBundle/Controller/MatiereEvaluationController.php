@@ -8,16 +8,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use SchoolBundle\Entity\Matiere;
 use SchoolBundle\Entity\MatiereEleve;
 use SchoolBundle\Entity\MatiereEvaluation;
-use AppBundle\Entity\Eleve;
+use UserBundle\Entity\Eleve;
 use SchoolBundle\Form\MatiereType;
 use SchoolBundle\Form\MatiereEvaluationType;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Evaluation controller.
+ *
+ * @Route("/matierevaluation")
+ */
 class MatiereEvaluationController extends Controller
 {
    
      /**
-     * @Route("/addMatiereEvaluation/classe/{idClasse}/matiere/{idMatiere}", name="addMatiereEvaluation")
+     * @Route("/add/classe/{idClasse}/matiere/{idMatiere}", name="addMatiereEvaluation")
      * @Method({"GET", "POST"})
      */
     public function addAction(Request $request)
@@ -35,7 +40,6 @@ class MatiereEvaluationController extends Controller
         $form=$this->createForm(MatiereEvaluationType::class,$matiereEvaluation,array('idMatiere'=>$idMatiere,'idClasse'=>$idClasse));
         $form->handleRequest($request);
 
-      //  print_r($form['evaluation']);
         if($form->isSubmitted() && $form->isValid()){
 
             $em=$this->getDoctrine()->getManager();

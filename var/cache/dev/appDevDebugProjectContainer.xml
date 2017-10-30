@@ -120,6 +120,11 @@
     <parameter key="mailer_user">symfony@gmail.com</parameter>
     <parameter key="mailer_password">symfony</parameter>
     <parameter key="secret">123abcd456789</parameter>
+    <parameter key="uploads_cours_support">uploads/cours/support</parameter>
+    <parameter key="uploads_cours_devoir">uploads/cours/devoir</parameter>
+    <parameter key="uploads_cours_annexe">uploads/cours/annexe</parameter>
+    <parameter key="uploads_matiere_prog_annuel">uploads/matiere/programme</parameter>
+    <parameter key="uploads_devoir">uploads/devoir</parameter>
     <parameter key="locale">fr</parameter>
     <parameter key="photo_directory">C:\wamp64\www\Schoolium/web/uploads/photos</parameter>
     <parameter key="logo_directory">C:\wamp64\www\Schoolium/web/uploads/logos</parameter>
@@ -488,6 +493,9 @@
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" synthetic="true"/>
     <service id="AppBundle\AppBundle" class="AppBundle\AppBundle" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Controller\AbsenceController" class="AppBundle\Controller\AbsenceController" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="AppBundle\Controller\AdminController" class="AppBundle\Controller\AdminController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
@@ -507,6 +515,9 @@
     <service id="AppBundle\DataFixtures\ORM\EleveFixtures" class="AppBundle\DataFixtures\ORM\EleveFixtures" public="false" autowire="true" autoconfigure="true"/>
     <service id="AppBundle\DataFixtures\ORM\EnseignantFixtures" class="AppBundle\DataFixtures\ORM\EnseignantFixtures" public="false" autowire="true" autoconfigure="true"/>
     <service id="AppBundle\DataFixtures\ORM\ParentalFixtures" class="AppBundle\DataFixtures\ORM\ParentalFixtures" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Form\AbsenceType" class="AppBundle\Form\AbsenceType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="AppBundle\Form\AdminType" class="AppBundle\Form\AdminType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -538,7 +549,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.804ca18ae4aae92e5791a18c0cd7aaa0"/>
+      <argument type="service" id="service_locator.1709cd41b003127719639ed80e77537c"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -707,7 +718,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>3dYEPnI473VEA8L5xPYRjP</argument>
+      <argument>Cwjn4g56SjISohyDWhv9D4</argument>
       <argument>C:\wamp64\www\Schoolium\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -717,7 +728,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>3dYEPnI473VEA8L5xPYRjP</argument>
+      <argument>Cwjn4g56SjISohyDWhv9D4</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -833,7 +844,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.6578abac5ff9599a76c8cc28b8260d24"/>
+      <argument type="service" id="service_locator.4c7ef5a333670d1159f773cf9629ac07"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -3082,12 +3093,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59d645ebe3c886.56623854</argument>
+      <argument>59f351203ba962.50552624</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59d645ebe3c886.56623854</argument>
+      <argument>59f351203ba962.50552624</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3221,6 +3232,26 @@
       </call>
       <call method="addRuntimeLoader">
         <argument type="service" id="twig.runtime_loader"/>
+      </call>
+      <call method="addGlobal">
+        <argument>uploads_cours_support</argument>
+        <argument>uploads/cours/support</argument>
+      </call>
+      <call method="addGlobal">
+        <argument>uploads_cours_devoir</argument>
+        <argument>uploads/cours/devoir</argument>
+      </call>
+      <call method="addGlobal">
+        <argument>uploads_cours_annexe</argument>
+        <argument>uploads/cours/annexe</argument>
+      </call>
+      <call method="addGlobal">
+        <argument>uploads_matiere_prog_annuel</argument>
+        <argument>uploads/matiere/programme</argument>
+      </call>
+      <call method="addGlobal">
+        <argument>uploads_devoir</argument>
+        <argument>uploads/devoir</argument>
       </call>
       <configurator service="twig.configurator.environment" method="configure"/>
     </service>
@@ -4291,6 +4322,8 @@
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command"/>
     </service>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\AbsenceController" class="AppBundle\Controller\AbsenceController" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\AbsenceController" class="AppBundle\Controller\AbsenceController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\AdminController" class="AppBundle\Controller\AdminController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\AdminController" class="AppBundle\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" abstract="true"/>
@@ -4301,6 +4334,8 @@
     <service id="abstract.instanceof.AppBundle\Controller\EnseignantController" class="AppBundle\Controller\EnseignantController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ParentalController" class="AppBundle\Controller\ParentalController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\ParentalController" class="AppBundle\Controller\ParentalController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\AbsenceType" class="AppBundle\Form\AbsenceType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\AbsenceType" class="AppBundle\Form\AbsenceType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\AdminType" class="AppBundle\Form\AdminType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\AdminType" class="AppBundle\Form\AdminType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\EleveType" class="AppBundle\Form\EleveType" public="false" autowire="true" abstract="true"/>
@@ -4311,6 +4346,10 @@
     <service id="abstract.instanceof.AppBundle\Form\ParentalType" class="AppBundle\Form\ParentalType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="service_locator.f28587dc1d1eec1e4603d198ecb7c312" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
     <service id="service_locator.7cf49346aef5c207a75bef4dfd2d1131" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
@@ -4379,7 +4418,7 @@
         <argument key="parental" type="service" id="autowired.AppBundle\Entity\Parental"/>
       </argument>
     </service>
-    <service id="service_locator.804ca18ae4aae92e5791a18c0cd7aaa0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.1709cd41b003127719639ed80e77537c" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\AdminController:assoSchoolAction" type="service" id="service_locator.1ee3b10050e8b1696ff498af289ab502"/>
@@ -4436,9 +4475,10 @@
         <argument key="translation.loader.yml" type="service" id="translation.loader.yml"/>
       </argument>
     </service>
-    <service id="service_locator.6578abac5ff9599a76c8cc28b8260d24" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.4c7ef5a333670d1159f773cf9629ac07" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="AppBundle\Form\AbsenceType" type="service" id="AppBundle\Form\AbsenceType"/>
         <argument key="AppBundle\Form\AdminType" type="service" id="AppBundle\Form\AdminType"/>
         <argument key="AppBundle\Form\EleveType" type="service" id="AppBundle\Form\EleveType"/>
         <argument key="AppBundle\Form\EnseignantType" type="service" id="AppBundle\Form\EnseignantType"/>
@@ -4677,7 +4717,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>V-nJr3dR8X</argument>
       <argument>0</argument>
-      <argument>3dYEPnI473VEA8L5xPYRjP</argument>
+      <argument>Cwjn4g56SjISohyDWhv9D4</argument>
       <argument>C:\wamp64\www\Schoolium\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4685,7 +4725,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>m9isfLUpTf</argument>
       <argument>0</argument>
-      <argument>3dYEPnI473VEA8L5xPYRjP</argument>
+      <argument>Cwjn4g56SjISohyDWhv9D4</argument>
       <argument>C:\wamp64\www\Schoolium\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4693,7 +4733,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>CxCZ+xvWIR</argument>
       <argument>0</argument>
-      <argument>3dYEPnI473VEA8L5xPYRjP</argument>
+      <argument>Cwjn4g56SjISohyDWhv9D4</argument>
       <argument>C:\wamp64\www\Schoolium\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4701,7 +4741,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>QTk1Qhdkw3</argument>
       <argument>0</argument>
-      <argument>3dYEPnI473VEA8L5xPYRjP</argument>
+      <argument>Cwjn4g56SjISohyDWhv9D4</argument>
       <argument>C:\wamp64\www\Schoolium\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

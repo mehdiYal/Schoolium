@@ -8,10 +8,15 @@ use SchoolBundle\Entity\Salle;
 use SchoolBundle\Form\SalleType;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Salle controller.
+ *
+ * @Route("/salle")
+ */
 class SalleController extends Controller
 {
     /**
-     * @Route("/addSalle", name="addSalle")
+     * @Route("/add", name="addSalle")
      */
     public function addAction(Request $request)
     {
@@ -32,7 +37,7 @@ class SalleController extends Controller
 
 
     /**
-     * @Route("/listSalles", name="listSalles")
+     * @Route("/list", name="listSalles")
      */
     public function showAction(Request $request)
     {
@@ -42,7 +47,7 @@ class SalleController extends Controller
     }
 
      /**
-     * @Route("/editSalle/{id}", name="editSalle")
+     * @Route("/edit/{id}", name="editSalle")
      */
     public function editAction(Request $request,Salle $salle)
     {
@@ -60,7 +65,7 @@ class SalleController extends Controller
 
 
      /**
-     * @Route("/removeSalle/{id}", name="removeSalle")
+     * @Route("/remove/{id}", name="removeSalle")
      */
     public function removeAction(Salle $salle)
     {

@@ -10,10 +10,16 @@ use SchoolBundle\Entity\EnsMat;
 use SchoolBundle\Form\EnsMatType;
 use Symfony\Component\HttpFoundation\Request;
 
+
+/**
+ * Classe controller.
+ *
+ * @Route("/classe")
+ */
 class ClasseController extends Controller
 {
     /**
-     * @Route("/addClasse", name="addClasse")
+     * @Route("/add", name="addClasse")
      */
     public function addAction(Request $request)
     {
@@ -34,7 +40,7 @@ class ClasseController extends Controller
 
 
     /**
-     * @Route("/listClasses", name="listClasses")
+     * @Route("/list", name="listClasses")
      */
     public function showAction(Request $request)
     {
@@ -44,7 +50,7 @@ class ClasseController extends Controller
     }
 
      /**
-     * @Route("/editClasse/{id}", name="editClasse")
+     * @Route("/edit/{id}", name="editClasse")
      */
     public function editAction(Request $request,Classe $classe)
     {
@@ -62,7 +68,7 @@ class ClasseController extends Controller
 
 
      /**
-     * @Route("/removeClasse/{id}", name="removeClasse")
+     * @Route("/remove/{id}", name="removeClasse")
      */
     public function removeAction(Classe $classe)
     {

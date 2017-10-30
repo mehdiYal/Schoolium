@@ -10,4 +10,12 @@ namespace SchoolBundle\Repository;
  */
 class EnsMatRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findByEnseignant($id)
+    {
+        $qb = $this->createQueryBuilder('c');
+      
+        $qb->where('c.enseignant = :id')
+              ->setParameter('id', $id);
+        return $qb;
+    }   
 }

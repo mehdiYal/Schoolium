@@ -8,10 +8,15 @@ use SchoolBundle\Entity\Transport;
 use SchoolBundle\Form\TransportType;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Transport controller.
+ *
+ * @Route("/transport")
+ */
 class TransportController extends Controller
 {
     /**
-     * @Route("/addTransport", name="addTransport")
+     * @Route("/add", name="addTransport")
      */
     public function addAction(Request $request)
     {
@@ -32,7 +37,7 @@ class TransportController extends Controller
 
 
     /**
-     * @Route("/listTransports", name="listTransports")
+     * @Route("/list", name="listTransports")
      */
     public function showAction(Request $request)
     {
@@ -42,7 +47,7 @@ class TransportController extends Controller
     }
 
      /**
-     * @Route("/editTransport/{id}", name="editTransport")
+     * @Route("/edit/{id}", name="editTransport")
      */
     public function editAction(Request $request,Transport $transport)
     {
@@ -60,7 +65,7 @@ class TransportController extends Controller
 
 
      /**
-     * @Route("/removeTransport/{id}", name="removeTransport")
+     * @Route("/remove/{id}", name="removeTransport")
      */
     public function removeAction(Transport $transport)
     {

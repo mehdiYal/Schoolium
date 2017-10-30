@@ -6,15 +6,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use SchoolBundle\Entity\Matiere;
+use SchoolBundle\Entity\Cours;
 use SchoolBundle\Entity\MatiereEleve;
-use AppBundle\Entity\Eleve;
+use SchoolBundle\Entity\EnsMat;
+use UserBundle\Entity\Eleve;
 use SchoolBundle\Form\MatiereType;
+use SchoolBundle\Form\EnsMatType;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Matiere controller.
+ *
+ * @Route("/matiere")
+ */
 class MatiereController extends Controller
 {
     /**
-     * @Route("/addMatiere", name="addMatiere")
+     * @Route("/add", name="addMatiere")
      */
     public function addAction(Request $request)
     {
@@ -34,7 +42,7 @@ class MatiereController extends Controller
 
 
     /**
-     * @Route("/listMatieres", name="listMatieres")
+     * @Route("/list", name="listMatieres")
      */
     public function showAction(Request $request)
     {
@@ -44,7 +52,7 @@ class MatiereController extends Controller
     }
 
      /**
-     * @Route("/editMatiere/{id}", name="editMatiere")
+     * @Route("/edit/{id}", name="editMatiere")
      */
     public function editAction(Request $request,Matiere $matiere)
     {
@@ -63,7 +71,7 @@ class MatiereController extends Controller
 
 
      /**
-     * @Route("/removeMatiere/{id}", name="removeMatiere")
+     * @Route("/remove/{id}", name="removeMatiere")
      */
     public function removeAction(Matiere $matiere)
     {
@@ -74,7 +82,7 @@ class MatiereController extends Controller
     }
 
      /**
-     * @Route("/showEleve/classe/{idClasse}/matiere/{idMatiere}", name="showEleve")
+     * @Route("/show/classe/{idClasse}/matiere/{idMatiere}", name="showEleve")
      * @Method({"GET", "POST"})
      */
     public function showEleveAction(Request $request){
@@ -117,6 +125,8 @@ class MatiereController extends Controller
         $datas['data']=$data;
         $datas['matiere']=$em->getRepository('SchoolBundle:Matiere')->findOneBy(array('id'=>  $idMatiere ));
         $datas['evaluations']=$evaluations;
+        $datas['cours']=$em->getRepository('SchoolBundle:Cours')->findBy(array('matiere'=>$idMatiere,'classe'=>$idClasse));
+        
         return $this->render('matieresViews/eleves.html.twig',array("datas"=>$datas));
     }
 
@@ -134,7 +144,7 @@ class MatiereController extends Controller
                 $idEleve=$_POST['ideleve'.$i];
                
                 $matiere=$em->getRepository('SchoolBundle:Matiere')->findOneBy(array('id'=> $idMatiere ));
-                $eleve=$em->getRepository('AppBundle:Eleve')->findOneBy(array('id'=> $idEleve ));
+                $eleve=$em->getRepository('UserBundle:Eleve')->findOneBy(array('id'=> $idEleve ));
                 
                 for($j=0;$j<$lengthEvaluation;$j++){
                     
@@ -166,5 +176,69 @@ class MatiereController extends Controller
         return $this->redirectToRoute('showEleve', array('idClasse' => $idClasse,'idMatiere' => $idMatiere));
     }
 
+      /**
+     * @Route("/delete/{id}", name="delete_note")
+     */
+    public function deleteAction(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->attributes->get('id');
+        $matiereEleve=$em->getRepository('SchoolBundle:MatiereEleve')->findOneBy(array('id'=> $id));
+        $em->remove($matiereEleve);
+        $em->flush();
+        
+        $referer = $request->headers->get('referer');
+       /* if ($referer == NULL) {
+            $url = $this->router->generate('fallback_url');
+        } else {
+            $url = $referer;
+        }*/
+        return $this->redirect($referer);  
+    }
+
+     /**
+     * @Route("/program/{id}", name="program_add")
+     */
+    public function programAction(Request $request)
+    {
+        extract($_POST);
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->attributes->get('id');
+        $ensMatiere=$em->getRepository('SchoolBundle:EnsMat')->findBy(array('enseignant'=> $id));
+        $i=0;
+
+        foreach ($ensMatiere as $value) {
+           
+            $form[$i]=$this->createForm(EnsMatType::class,$value);
+            $form[$i]->handleRequest($request);
+            $i++;
+        }
+
+        if(!isset($cpt)){
+            $cpt=0;
+        }
+
+          if($form[$cpt]->isSubmitted() && $form[$cpt]->isValid() && $form[$cpt]['programmeAnnuel']->getData()!=""){
+                $idEnsMat=addslashes($_POST['idEnsMat'.$cpt]);
+                $ensMat=$em->getRepository('SchoolBundle:EnsMat')->findOneBy(array('id'=> $idEnsMat));
+                $uploaded_file = $form[$cpt]['programmeAnnuel']->getData();
+                if(!empty($ensMat->getProgrammeAnnuel()) && $uploaded_file)
+                {
+                    $file =  $ensMat->getProgrammeAnnuel();
+                    $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                    $file->move(
+                        $this->getParameter('uploads_matiere_prog_annuel'),
+                        $fileName
+                    );
+                     $ensMat->setProgrammeAnnuel($fileName);
+                }
+               
+                $em->persist($ensMat);
+                $em->flush();
+            }
+
+        return $this->render('matieresViews/listProgram.html.twig',array("data"=>$ensMatiere,'form'=>$form));
+        
+    }    
 
 }

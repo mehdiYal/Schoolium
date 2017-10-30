@@ -8,10 +8,15 @@ use SchoolBundle\Entity\Menu;
 use SchoolBundle\Form\MenuType;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Menu controller.
+ *
+ * @Route("/menu")
+ */
 class MenuController extends Controller
 {
     /**
-     * @Route("/addMenu", name="addMenu")
+     * @Route("/add", name="addMenu")
      */
     public function addAction(Request $request)
     {
@@ -32,7 +37,7 @@ class MenuController extends Controller
 
 
     /**
-     * @Route("/listMenus", name="listMenus")
+     * @Route("/list", name="listMenus")
      */
     public function showAction(Request $request)
     {
@@ -42,7 +47,7 @@ class MenuController extends Controller
     }
 
      /**
-     * @Route("/editMenu/{id}", name="editMenu")
+     * @Route("/edit/{id}", name="editMenu")
      */
     public function editAction(Request $request,Menu $menu)
     {
@@ -60,7 +65,7 @@ class MenuController extends Controller
 
 
      /**
-     * @Route("/removeMenu/{id}", name="removeMenu")
+     * @Route("/remove/{id}", name="removeMenu")
      */
     public function removeAction(Menu $menu)
     {

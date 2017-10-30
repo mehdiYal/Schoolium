@@ -8,10 +8,15 @@ use SchoolBundle\Entity\Ecole;
 use SchoolBundle\Form\EcoleType;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * School controller.
+ *
+ * @Route("/school")
+ */
 class SchoolController extends Controller
 {
     /**
-     * @Route("/addSchool", name="addSchool")
+     * @Route("/add", name="addSchool")
      */
     public function addAction(Request $request)
     {
@@ -45,7 +50,7 @@ class SchoolController extends Controller
     }
 
      /**
-     * @Route("/listSchools", name="listSchools")
+     * @Route("/list", name="listSchools")
      */
     public function showAction(Request $request)
     {
@@ -56,7 +61,7 @@ class SchoolController extends Controller
 
 
      /**
-     * @Route("/editSchool/{id}", name="editSchool")
+     * @Route("/edit/{id}", name="editSchool")
      */
     public function editAction(Request $request,Ecole $ecole)
     {
@@ -90,7 +95,7 @@ class SchoolController extends Controller
 
 
      /**
-     * @Route("/removeSchool/{id}", name="removeSchool")
+     * @Route("/remove/{id}", name="removeSchool")
      */
     public function removeAction(Ecole $ecole)
     {
@@ -102,7 +107,7 @@ class SchoolController extends Controller
 
 
      /**
-     * @Route("/profileSchool/{id}", name="profileSchool")
+     * @Route("/profile/{id}", name="profileSchool")
      */
     public function profileAction(Ecole $ecole)
     {

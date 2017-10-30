@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
+{% dump(form) %}
+{% set i=0 %}
+	{% for ensmat in data %}
+		{% set formFile =  form[i].createView %}
+
+	    {{ form_start(formFile) }}
+	    <label>{{ensmat.matiere.nom}}</label>
+		<label>{{ensmat.classe.nom}}</label>
+		<input hidden="hidden" name="idEnsMat{{i}}" value="{{ensmat.id}}" />
+		<input hidden="hidden" name="cpt" value="{{i}}" />
+		<input hidden="hidden" name="taille" value="{{ensmat|length}}" />
+		{% if ensmat.programmeAnnuel|slice(-4)!=".tmp" %}
+			<a href="{{asset(uploads_matiere_prog_annuel~'/'~ensmat.programmeAnnuel)}}">PDF</a>
+		{% endif %}
+		{{ form_widget(formFile.programmeAnnuel) }}
+	   	<button type="submit">{{'global.edit'|trans}}</button>
+	    {{ form_end(formFile) }}
+		{% if ensmat.programmeAnnuel|length==0 %}
+			<a href="" class="disabled">{{'global.delete'|trans}}</a>
+			{% else %}
+			<a href="">{{'global.delete'|trans}}</a>
+			{% endif %}
+		{% set i=i+1 %}
+	{% endfor %}
+	<style type="text/css">
+
+	
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+	</style>
+{% endblock %}

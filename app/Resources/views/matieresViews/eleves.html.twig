@@ -3,14 +3,13 @@
 {% block body %}
 
 
-<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
 	<ol>
 	{% set i=0 %}
-	{% dump(datas) %}
 		{% for data in datas.data %}
 		<form name="addNote" id="addNote" action="{{path('addNote')}}" method="post">
 			{% if i==0 %}
-			<a href="{{ path('addMatiereEvaluation', { 'idClasse': data.eleve.classe.id, 'idMatiere': datas.matiere.id}) }}">Ajouter une evaluation</a>
+			<a href="{{ path('addMatiereEvaluation', { 'idClasse': data.eleve.classe.id, 'idMatiere': datas.matiere.id}) }}">{{'evaluation.add'|trans}}</a>
+			<a href="{{ path('new_cours', { 'idClasse': data.eleve.classe.id, 'idMatiere': datas.matiere.id}) }}">{{'cours.add'|trans}}</a>
 			<input type="hidden" name="idClasse" value="{{data.eleve.classe.id}}">
 			{% endif %}
 			<li>{{datas.matiere.nom~' '~data.eleve.nom~' '~data.eleve.prenom}}
@@ -21,14 +20,16 @@
 					
 					{% if(data.note is not null) %}
 						{% for notes in data.note %}
+							<div>
 							{% if bool==false and notes.evaluation_id==evaluation.id %}
 
 								{# Cas où l'evaluation a été noté #}
 								
-								<input type="text" name="evaluation{{i}}" value="{{evaluation.nom}}">
+								<input type="text" name="evaluation{{i}}" value="{{evaluation.nom}}" disabled>
 								<input type="number" name="eleve{{data.eleve.id}}id{{j}}note" value="{{notes.note}}">
 								<input type="hidden" name="eleve{{data.eleve.id}}id{{j}}Evaluation" value="{{evaluation.id}}">
 								<input type="hidden" name="eleve{{data.eleve.id}}id{{j}}MatiereEleve" value="{{notes.id}}">
+								<a href="{{path('delete_note', { 'id': notes.id })}}">{{'global.delete'|trans()}}</a>
 								{% set bool=true %}
 								{% set j=j+1 %}
 
@@ -37,25 +38,22 @@
 
 								{# Cas où l'evaluation n'a pas été noté #}
 								
-								<input type="text" name="evaluation{{i}}" value="{{evaluation.nom}}">
+								<input type="text" name="evaluation{{i}}" value="{{evaluation.nom}}" disabled>
 								<input type="number" name="eleve{{data.eleve.id}}id{{j}}note" value="">
 								<input type="hidden" name="eleve{{data.eleve.id}}id{{j}}Evaluation" value="{{evaluation.id}}">
 								<input type="hidden" name="eleve{{data.eleve.id}}id{{j}}MatiereEleve" value="-1">
 								{% set j=j+1 %}
 							{% endif %}
-
-							
-
+							</div>
 						{% endfor %}
 					{% else %}	
 
 						{# Cas où l'eleve n'a pas été noté #}	
 						
-						<input type="text" name="evaluation{{i}}" value="{{evaluation.nom}}">
+						<input type="text" name="evaluation{{i}}" value="{{evaluation.nom}}" disabled>
 						<input type="number" name="eleve{{data.eleve.id}}id{{j}}note" value="">
 						<input type="hidden" name="eleve{{data.eleve.id}}id{{j}}Evaluation" value="{{evaluation.id}}">
 						<input type="hidden" name="eleve{{data.eleve.id}}id{{j}}MatiereEleve" value="-1">
-
 						{% set j=j+1 %}
 
 					{% endif %}
@@ -70,6 +68,16 @@
 		<input type="hidden" name="cpt" value="{{i}}">
 		<input type="submit" value="{{'global.update'|trans}}">
 		</form>
+	</ol>
+
+	<ol>
+		{% for cours in datas.cours %}
+		<li>{{cours.titre}} 
+			<a href="{{asset(uploads_cours_support~'/'~cours.support)}}">{{'cours.support.title'|trans}}</a> 
+			<a href="{{asset(uploads_cours_devoir~'/'~cours.devoir)}}">{{'devoir.maison.title'|trans}}</a> 
+			<a href="{{asset(uploads_cours_annexe~'/'~cours.annexe)}}">{{'cours.annexe.title'|trans}}</a>
+		</li>
+		{% endfor %}
 	</ol>
 	
 {% endblock %}

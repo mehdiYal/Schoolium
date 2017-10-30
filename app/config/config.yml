@@ -40,7 +40,12 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-
+    globals:
+        uploads_cours_support: '%uploads_cours_support%'
+        uploads_cours_devoir: '%uploads_cours_devoir%'
+        uploads_cours_annexe: '%uploads_cours_annexe%'
+        uploads_matiere_prog_annuel: '%uploads_matiere_prog_annuel%'
+        uploads_devoir: '%uploads_devoir%'
 # Doctrine Configuration
 doctrine:
     dbal:

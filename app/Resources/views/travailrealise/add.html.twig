@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container">
+{% dump(data) %}
+	{{ form_start(form) }}
+		
+		<button type="submit">Valider</button>
+	{{ form_end(form) }}
+</div>
+
+{% endblock %}

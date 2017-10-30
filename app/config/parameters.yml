@@ -10,3 +10,9 @@ parameters:
     mailer_user: symfony@gmail.com
     mailer_password: symfony
     secret: 123abcd456789
+
+    uploads_cours_support: uploads/cours/support
+    uploads_cours_devoir: uploads/cours/devoir
+    uploads_cours_annexe: uploads/cours/annexe
+    uploads_matiere_prog_annuel: uploads/matiere/programme
+    uploads_devoir: uploads/devoir

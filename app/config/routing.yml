@@ -1,3 +1,4 @@
+
 school:
     resource: "@SchoolBundle/Controller/"
     type:     annotation
